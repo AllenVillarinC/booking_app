@@ -12,13 +12,13 @@ class _TitleTextState extends State<TitleText> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 20, bottom: 10),
+      padding: const EdgeInsets.all(10),
       child: Row(
         children: [
           const Text(
             "Favorites ",
             style: TextStyle(
-                fontSize: 25,
+                fontSize: 20,
                 fontWeight: FontWeight.bold,
                 color: Color(0xffffffff)),
           ),

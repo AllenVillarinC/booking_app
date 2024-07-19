@@ -1,8 +1,7 @@
 import 'package:booking_app/widgets/cards/business_card.dart';
-import 'package:booking_app/widgets/title_text.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:ionicons/ionicons.dart';
 
 class OpeningPage extends StatefulWidget {
   const OpeningPage({super.key});
@@ -12,119 +11,268 @@ class OpeningPage extends StatefulWidget {
 }
 
 class _OpeningPageState extends State<OpeningPage> {
-  int iconColor0 = 0xffff78ae;
+  int tabIconColor = 0xff4472C4;
+  IoniconsData tabIconChange0 = Ionicons.home;
+  IoniconsData tabIconChange1 = Ionicons.calendar_outline;
+  IoniconsData tabIconChange2 = Ionicons.notifications_outline;
+  IoniconsData tabIconChange3 = Ionicons.person_circle_outline;
+  int iconColor0 = 0xffffffff;
   int iconColor1 = 0xffffffff;
   int iconColor2 = 0xffffffff;
+  int iconColor3 = 0xffffffff;
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          automaticallyImplyLeading: false,
-          title: Align(
-            alignment: Alignment.centerLeft,
-            child: Row(
+    return Scaffold(
+      body: NestedScrollView(
+        floatHeaderSlivers: true,
+        headerSliverBuilder: (context, innderBoxIsScrolled) => [
+          SliverAppBar(
+            actions: const [
+              Padding(
+                padding: EdgeInsets.only(right: 20),
+                child: Icon(
+                  Ionicons.settings_outline,
+                  color: Color(0xffffffff), // needs to be changed
+                ),
+              )
+            ],
+            leading: const Row(
               children: [
-                SizedBox(
-                  width: 50,
-                  height: 50,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(25),
-                    child: Lottie.asset(
-                      "assets/lottie/sven.json",
-                      fit: BoxFit.cover,
-                    ),
+                Padding(
+                  padding: EdgeInsets.only(left: 10, right: 5),
+                  child: Icon(
+                    Ionicons.logo_github,
+                    size: 30,
+                    color: Color(0xffffffff),
                   ),
                 ),
-                const Text(
-                  "BookEase",
+                Text(
+                  "BuzzUp",
                   style: TextStyle(
-                      fontWeight: FontWeight.bold, color: Color(0xffffffff)),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                    color: Color(0xffffffff),
+                  ),
                 ),
               ],
+            ),
+            leadingWidth: MediaQuery.of(context).size.width,
+            floating: true,
+            snap: true,
+            centerTitle: true,
+            backgroundColor: const Color(0xff111111),
+          ),
+        ],
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 10),
+            child: Center(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          "Book ",
+                          style: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.w700,
+                            color: Color(0xffffffff),
+                          ),
+                        ),
+                        Text(
+                          "an appointment",
+                          style: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.w300,
+                            color: const Color(0xffffffff).withOpacity(0.5),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 10),
+                    TextField(
+                      style: const TextStyle(color: Color(0xffffffff)),
+                      cursorColor: const Color(0xffffffff),
+                      decoration: InputDecoration(
+                        prefixIcon: const Icon(Ionicons.search_outline),
+                        prefixIconColor: const Color(0xffffffff),
+                        suffixIcon: const Icon(Ionicons.mic_outline),
+                        suffixIconColor: const Color(0xffffffff),
+                        filled: true,
+                        fillColor: const Color(0xff111111),
+                        hintText: "Search services",
+                        hintStyle: TextStyle(
+                          color: const Color(0xffffffff).withOpacity(0.7),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: const Color(0xffffffff).withOpacity(0.3),
+                          ),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(
+                            color: Color(0xffffffff),
+                          ),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Nearby",
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xffffffff),
+                          ),
+                        ),
+                        Text(
+                          "More",
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Color(0xffffffff),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 5),
+                    SizedBox(
+                      height: 180,
+                      child: ListView.builder(
+                        itemCount: 10,
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context, index) {
+                          // Replace with your BusinessCard widget
+                          return const Padding(
+                            padding: EdgeInsets.only(right: 5),
+                            child: BusinessCard(),
+                          );
+                        },
+                      ),
+                    ),
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Popular",
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xffffffff),
+                          ),
+                        ),
+                        Text(
+                          "More",
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Color(0xffffffff),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 5),
+                    SizedBox(
+                      height: 180,
+                      child: ListView.builder(
+                        itemCount: 10,
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context, index) {
+                          // Replace with your BusinessCard widget
+                          return const Padding(
+                            padding: EdgeInsets.only(right: 5),
+                            child: BusinessCard(),
+                          );
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ),
-          actions: const [
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              child: Icon(
-                Icons.search,
-                color: Color(0xffffffff),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              child: Icon(
-                Icons.settings,
-                color: Color(0xffffffff),
-              ),
-            )
-          ],
-          backgroundColor: const Color(0xff000000),
-          shadowColor: const Color(0xffffffff),
         ),
-        bottomNavigationBar: CurvedNavigationBar(
-            items: [
-              Icon(
-                Icons.favorite,
-                color: Color(iconColor0),
+      ),
+      bottomNavigationBar: Container(
+        decoration: const BoxDecoration(
+          color: Color(0xff111111),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+          child: GNav(
+            backgroundColor: const Color(0xff111111),
+            color: const Color(0xffffffff),
+            activeColor: Color(tabIconColor),
+            gap: 3,
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+            onTabChange: (value) {
+              setState(
+                () {
+                  if (value == 0) {
+                    tabIconColor = 0xff4472C4;
+                    tabIconChange0 = Ionicons.home;
+                    tabIconChange1 = Ionicons.calendar_outline;
+                    tabIconChange2 = Ionicons.notifications_outline;
+                    tabIconChange3 = Ionicons.person_circle_outline;
+                  } else if (value == 1) {
+                    tabIconColor = 0xff2FF924;
+                    tabIconChange0 = Ionicons.home_outline;
+                    tabIconChange1 = Ionicons.calendar;
+                    tabIconChange2 = Ionicons.notifications_outline;
+                    tabIconChange3 = Ionicons.person_circle_outline;
+                  } else if (value == 2) {
+                    tabIconColor = 0xffFFCE31;
+                    tabIconChange0 = Ionicons.home_outline;
+                    tabIconChange1 = Ionicons.calendar_outline;
+                    tabIconChange2 = Ionicons.notifications;
+                    tabIconChange3 = Ionicons.person_circle_outline;
+                  } else {
+                    tabIconColor = 0xffffffff;
+                    tabIconChange0 = Ionicons.home_outline;
+                    tabIconChange1 = Ionicons.calendar_outline;
+                    tabIconChange2 = Ionicons.notifications_outline;
+                    tabIconChange3 = Ionicons.person_circle;
+                  }
+                },
+              );
+            },
+            tabs: [
+              GButton(
+                icon: tabIconChange0,
+                iconColor: Color(iconColor0),
+                text: "Home",
+                textStyle: const TextStyle(
+                    color: Colors.white, fontWeight: FontWeight.bold),
               ),
-              Icon(
-                Icons.event_available,
-                color: Color(iconColor1),
+              GButton(
+                icon: tabIconChange1,
+                iconColor: Color(iconColor1),
+                text: "Appointments",
+                textStyle: const TextStyle(
+                    color: Colors.white, fontWeight: FontWeight.bold),
               ),
-              Icon(
-                Icons.schedule,
-                color: Color(iconColor2),
+              GButton(
+                icon: tabIconChange2,
+                iconColor: Color(iconColor2),
+                text: "Updates",
+                textStyle: const TextStyle(
+                    color: Colors.white, fontWeight: FontWeight.bold),
               ),
-              SizedBox(
-                width: 25,
-                height: 25,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(12.5),
-                  child: Image.asset(
-                    "assets/images/profile.jpeg",
-                    fit: BoxFit.cover,
-                  ),
-                ),
+              GButton(
+                icon: tabIconChange3,
+                text: "You",
+                textStyle: const TextStyle(
+                    color: Colors.white, fontWeight: FontWeight.bold),
               ),
             ],
-            height: 60,
-            backgroundColor: const Color(0xffF1F9EC),
-            buttonBackgroundColor: const Color(0xff000000),
-            color: const Color(0xff000000),
-            onTap: (value) {
-              setState(() {
-                if (value == 0) {
-                  iconColor0 = 0xffff78ae;
-                  iconColor1 = 0xffffffff;
-                  iconColor2 = 0xffffffff;
-                } else if (value == 1) {
-                  iconColor0 = 0xffffffff;
-                  iconColor1 = 0xff2FF924;
-                  iconColor2 = 0xffffffff;
-                } else if (value == 2) {
-                  iconColor0 = 0xffffffff;
-                  iconColor1 = 0xffffffff;
-                  iconColor2 = 0xffFFCE31;
-                } else {
-                  iconColor0 = 0xffffffff;
-                  iconColor1 = 0xffffffff;
-                  iconColor2 = 0xffffffff;
-                }
-              });
-            }),
-        body: const SingleChildScrollView(
-          child: Center(
-            child: Column(
-              children: [
-                TitleText(),
-                BusinessCard(),
-                BusinessCard(),
-                BusinessCard(),
-              ],
-            ),
           ),
         ),
       ),
