@@ -69,7 +69,7 @@ class _OpeningPageState extends State<OpeningPage> {
             padding: const EdgeInsets.only(top: 10),
             child: Center(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.only(left: 20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -95,31 +95,35 @@ class _OpeningPageState extends State<OpeningPage> {
                       ],
                     ),
                     const SizedBox(height: 10),
-                    TextField(
-                      style: const TextStyle(color: Color(0xffffffff)),
-                      cursorColor: const Color(0xffffffff),
-                      decoration: InputDecoration(
-                        prefixIcon: const Icon(Ionicons.search_outline),
-                        prefixIconColor: const Color(0xffffffff),
-                        suffixIcon: const Icon(Ionicons.mic_outline),
-                        suffixIconColor: const Color(0xffffffff),
-                        filled: true,
-                        fillColor: const Color(0xff111111),
-                        hintText: "Search services",
-                        hintStyle: TextStyle(
-                          color: const Color(0xffffffff).withOpacity(0.7),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: const Color(0xffffffff).withOpacity(0.3),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 20),
+                      child: TextField(
+                        style: const TextStyle(color: Color(0xffffffff)),
+                        cursorColor: const Color(0xffffffff),
+                        decoration: InputDecoration(
+                          contentPadding: EdgeInsets.symmetric(vertical: 10),
+                          prefixIcon: const Icon(Ionicons.search_outline),
+                          prefixIconColor: const Color(0xffffffff),
+                          suffixIcon: const Icon(Ionicons.mic_outline),
+                          suffixIconColor: const Color(0xffffffff),
+                          filled: true,
+                          fillColor: const Color(0xff111111),
+                          hintText: "Search services",
+                          hintStyle: TextStyle(
+                            color: const Color(0xffffffff).withOpacity(0.7),
                           ),
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(
-                            color: Color(0xffffffff),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: const Color(0xffffffff).withOpacity(0.3),
+                            ),
+                            borderRadius: BorderRadius.circular(20),
                           ),
-                          borderRadius: BorderRadius.circular(20),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: const BorderSide(
+                              color: Color(0xffffffff),
+                            ),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
                         ),
                       ),
                     ),
