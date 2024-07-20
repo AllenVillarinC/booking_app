@@ -1,4 +1,3 @@
-import 'package:booking_app/configs/defaults.dart';
 import 'package:booking_app/configs/imports.dart';
 
 class OpeningPage extends StatefulWidget {
