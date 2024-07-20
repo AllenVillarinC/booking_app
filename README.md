@@ -1,16 +1,16 @@
-# booking_app
+# BuzzUp
 
-A new Flutter project.
+A booking application for small businesses
 
-## Getting Started
+# Iterations
 
-This project is a starting point for a Flutter application.
+## July 15, 2024
 
-A few resources to get you started if this is your first Flutter project:
+https://github.com/user-attachments/assets/89f5ab8d-0c1b-4a1e-893f-df6276d3c8f7
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## July 17, 2024
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Screenshot 2024-07-18 at 12 49 54 PM](https://github.com/user-attachments/assets/e6794a6a-49d4-45e8-920d-ccdd275f9fce)
+
+## July 19, 2024
+
