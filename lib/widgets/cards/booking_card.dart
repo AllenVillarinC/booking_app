@@ -1,17 +1,13 @@
-import 'package:booking_app/configs/lists.dart';
-import 'package:flutter/material.dart';
-import 'dart:math';
+import 'package:booking_app/configs/imports.dart';
 
-import 'package:ionicons/ionicons.dart';
-
-class BusinessCard extends StatefulWidget {
-  const BusinessCard({super.key});
+class BookingCard extends StatefulWidget {
+  const BookingCard({super.key});
 
   @override
-  State<BusinessCard> createState() => _BusinessCardState();
+  State<BookingCard> createState() => _BookingCardState();
 }
 
-class _BusinessCardState extends State<BusinessCard> {
+class _BookingCardState extends State<BookingCard> {
   Random random = Random();
 
   @override
@@ -69,13 +65,12 @@ class _BusinessCardState extends State<BusinessCard> {
                             size: 15,
                           ),
                         ),
-                        const Padding(
-                          padding: EdgeInsets.only(right: 5),
+                        Padding(
+                          padding: const EdgeInsets.only(right: 5),
                           child: Text(
                             "4.7",
                             style: TextStyle(
-                                color: Color(0xffffffff),
-                                fontWeight: FontWeight.bold),
+                                color: primary, fontWeight: FontWeight.bold),
                           ),
                         ),
                         Padding(
@@ -83,27 +78,27 @@ class _BusinessCardState extends State<BusinessCard> {
                           child: Text(
                             "(180)",
                             style: TextStyle(
-                              color: const Color(0xffffffff).withOpacity(0.5),
+                              color: primary.withOpacity(0.5),
                             ),
                           ),
                         ),
                       ],
                     ),
                     // Location
-                    const Row(
+                     Row(
                       children: [
                         Padding(
-                          padding: EdgeInsets.only(right: 5),
+                          padding: const EdgeInsets.only(right: 5),
                           child: Icon(
                             Ionicons.location,
-                            color: Color(0xffffffff),
+                            color: primary,
                             size: 15,
                           ),
                         ),
                         Text(
                           "0.3 km",
                           style: TextStyle(
-                            color: Color(0xffffffff),
+                            color: primary,
                           ),
                         ),
                       ],
@@ -140,7 +135,9 @@ class _BusinessCardState extends State<BusinessCard> {
                           width: 30,
                           height: 30,
                           decoration: BoxDecoration(
-                            border: Border.all(color: const Color(0xffffffff)),
+                            border: Border.all(
+                              color: primary,
+                            ),
                             borderRadius: BorderRadius.circular(15),
                             color: const Color(0xff000000),
                           ),
@@ -153,10 +150,12 @@ class _BusinessCardState extends State<BusinessCard> {
                           ),
                         ),
                       ),
-                      const Text(
+                       Text(
                         "The Gentleman's Cut",
-                        style:
-                            TextStyle(color: Color(0xffffffff), fontSize: 12),
+                        style: TextStyle(
+                          color: primary,
+                          fontSize: 12,
+                        ),
                       ),
                     ],
                   ),
@@ -165,14 +164,17 @@ class _BusinessCardState extends State<BusinessCard> {
                   width: 100,
                   height: 30,
                   decoration: BoxDecoration(
-                    color: const Color(0xffffffff),
                     borderRadius: BorderRadius.circular(10),
+                    border: Border.all(
+                      width: 1,
+                      color: primary.withOpacity(0.5),
+                    ),
                   ),
-                  child: const Center(
+                  child:  Center(
                     child: Text(
                       "Book Now",
                       style: TextStyle(
-                        color: Color(0xff000000),
+                        color: primary,
                         fontSize: 13,
                       ),
                     ),
