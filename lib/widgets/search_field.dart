@@ -20,7 +20,7 @@ class _SearchFieldState extends State<SearchField> {
         suffixIcon: const Icon(Ionicons.mic_outline),
         suffixIconColor: primary,
         filled: true,
-        fillColor: const Color(0xff111111),
+        fillColor: secondary,
         hintText: "Search services",
         hintStyle: TextStyle(
           color: primary.withOpacity(0.7),
