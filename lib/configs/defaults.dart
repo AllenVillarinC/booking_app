@@ -10,3 +10,7 @@ int iconColor1 = 0xffffffff;
 int iconColor2 = 0xffffffff;
 
 Color primary = const Color(0xffffffff);
+Color secondary = const Color(0xff111111);
+Color backgroundAppColor = const Color(0xff010101);
+
+double cardRadius = 15;

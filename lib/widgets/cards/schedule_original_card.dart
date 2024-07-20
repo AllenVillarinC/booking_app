@@ -1,13 +1,13 @@
 import 'package:booking_app/configs/imports.dart';
 
-class ScheduleCard extends StatefulWidget {
-  const ScheduleCard({super.key});
+class ScheduleoriginalCard extends StatefulWidget {
+  const ScheduleoriginalCard({super.key});
 
   @override
-  State<ScheduleCard> createState() => _ScheduleCardState();
+  State<ScheduleoriginalCard> createState() => _ScheduleoriginalCardState();
 }
 
-class _ScheduleCardState extends State<ScheduleCard> {
+class _ScheduleoriginalCardState extends State<ScheduleoriginalCard> {
   Random random = Random();
 
   @override
@@ -19,20 +19,20 @@ class _ScheduleCardState extends State<ScheduleCard> {
           children: [
             Container(
               height: 120,
-              width: MediaQuery.of(context).size.width * 0.90,
-              decoration: BoxDecoration(
-                image: const DecorationImage(
+              width: MediaQuery.of(context).size.width,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
                     image: AssetImage("assets/images/barber_shop.jpg"),
                     fit: BoxFit.cover),
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(cardRadius),
-                  topRight: Radius.circular(cardRadius),
+                  topLeft: Radius.circular(15),
+                  topRight: Radius.circular(15),
                 ),
               ),
             ),
             Container(
               height: 120,
-              width: MediaQuery.of(context).size.width * 0.90,
+              width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
@@ -43,9 +43,9 @@ class _ScheduleCardState extends State<ScheduleCard> {
                   begin: Alignment.bottomCenter,
                   end: Alignment.topCenter,
                 ),
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(cardRadius),
-                  topRight: Radius.circular(cardRadius),
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(15),
+                  topRight: Radius.circular(15),
                 ),
               ),
               child: Padding(
@@ -111,11 +111,11 @@ class _ScheduleCardState extends State<ScheduleCard> {
         ),
         Container(
           height: 100,
-          width: MediaQuery.of(context).size.width * 0.90,
+          width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(cardRadius),
-              bottomRight: Radius.circular(cardRadius),
+            borderRadius: const BorderRadius.only(
+              bottomLeft: Radius.circular(15),
+              bottomRight: Radius.circular(15),
             ),
             color: Color(cardColorsDark[randomNumber]).withOpacity(0.5),
           ),
@@ -172,7 +172,7 @@ class _ScheduleCardState extends State<ScheduleCard> {
                 Container(
                   height: 30,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(cardRadius),
+                    borderRadius: BorderRadius.circular(10),
                     border: Border.all(
                       width: 1,
                       color: primary.withOpacity(0.5),

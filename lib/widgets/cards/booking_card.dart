@@ -20,13 +20,13 @@ class _BookingCardState extends State<BookingCard> {
             Container(
               height: 100,
               width: MediaQuery.of(context).size.width * 0.8,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
+              decoration: BoxDecoration(
+                image: const DecorationImage(
                     image: AssetImage("assets/images/barber_shop.jpg"),
                     fit: BoxFit.cover),
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(15),
-                  topRight: Radius.circular(15),
+                  topLeft: Radius.circular(cardRadius),
+                  topRight: Radius.circular(cardRadius),
                 ),
               ),
             ),
@@ -43,9 +43,9 @@ class _BookingCardState extends State<BookingCard> {
                   begin: Alignment.bottomCenter,
                   end: Alignment.topCenter,
                 ),
-                borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(15),
-                  topRight: Radius.circular(15),
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(cardRadius),
+                  topRight: Radius.circular(cardRadius),
                 ),
               ),
               child: Padding(
@@ -85,7 +85,7 @@ class _BookingCardState extends State<BookingCard> {
                       ],
                     ),
                     // Location
-                     Row(
+                    Row(
                       children: [
                         Padding(
                           padding: const EdgeInsets.only(right: 5),
@@ -113,12 +113,11 @@ class _BookingCardState extends State<BookingCard> {
           height: 70,
           width: MediaQuery.of(context).size.width * 0.8,
           decoration: BoxDecoration(
-            borderRadius: const BorderRadius.only(
-              bottomLeft: Radius.circular(15),
-              bottomRight: Radius.circular(15),
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(cardRadius),
+              bottomRight: Radius.circular(cardRadius),
             ),
             color: Color(cardColorsDark[randomNumber]).withOpacity(0.5),
-            // color: Color(0xff111111),
           ),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -129,28 +128,14 @@ class _BookingCardState extends State<BookingCard> {
                   padding: const EdgeInsets.only(right: 5),
                   child: Row(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.only(right: 5),
-                        child: Container(
-                          width: 30,
-                          height: 30,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: primary,
-                            ),
-                            borderRadius: BorderRadius.circular(15),
-                            color: const Color(0xff000000),
-                          ),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
-                            child: Image.asset(
-                              "assets/images/sample_picture.jpg",
-                              fit: BoxFit.cover,
-                            ),
-                          ),
+                      const Padding(
+                        padding: EdgeInsets.only(right: 5),
+                        child: UserPicture(
+                          size: 30,
+                          image: "assets/images/sample_picture.jpg",
                         ),
                       ),
-                       Text(
+                      Text(
                         "The Gentleman's Cut",
                         style: TextStyle(
                           color: primary,
@@ -164,13 +149,13 @@ class _BookingCardState extends State<BookingCard> {
                   width: 100,
                   height: 30,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(cardRadius),
                     border: Border.all(
                       width: 1,
                       color: primary.withOpacity(0.5),
                     ),
                   ),
-                  child:  Center(
+                  child: Center(
                     child: Text(
                       "Book Now",
                       style: TextStyle(

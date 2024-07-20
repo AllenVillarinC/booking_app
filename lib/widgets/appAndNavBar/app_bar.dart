@@ -37,7 +37,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
       floating: true,
       snap: true,
       centerTitle: true,
-      backgroundColor: const Color(0xff111111),
+      backgroundColor: secondary,
     );
   }
 }
