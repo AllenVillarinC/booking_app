@@ -1,6 +1,6 @@
 # BuzzUp, A flutter application for small businesses
 
-BusinessEase is a versatile booking application specifically designed for small businesses, including barbers, aestheticians, and other personal service providers. Our platform streamlines the appointment scheduling process, enhancing customer experience and optimizing business operations.
+BuzzUp is a versatile booking application specifically designed for small businesses, including barbers, aestheticians, and other personal service providers. Our platform streamlines the appointment scheduling process, enhancing customer experience and optimizing business operations.
 
 More details coming soon...
 
