@@ -14,11 +14,11 @@ class _ListCreatorState extends State<ListCreator> {
     return SizedBox(
       height: 180,
       child: ListView.builder(
-        itemCount: 5,
+        itemCount: 3,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           return Padding(
-            padding: const EdgeInsets.only(right: 5),
+            padding: const EdgeInsets.only(left: 20),
             child: widget.card,
           );
         },

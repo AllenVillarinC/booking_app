@@ -135,11 +135,14 @@ class _BookingCardState extends State<BookingCard> {
                           image: "assets/images/sample_picture.jpg",
                         ),
                       ),
-                      Text(
-                        "The Gentleman's Cut",
-                        style: TextStyle(
-                          color: primary,
-                          fontSize: 12,
+                      SizedBox(
+                        width: 120,
+                        child: Text(
+                          "The Gentleman's Cut",
+                          style: TextStyle(
+                            color: primary,
+                            fontSize: 12,
+                          ),
                         ),
                       ),
                     ],

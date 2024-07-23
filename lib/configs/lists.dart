@@ -1,3 +1,5 @@
+import 'package:booking_app/configs/imports.dart';
+
 List<int> cardColorsDark = [
   0xff191c27,
   0xff010127,
@@ -18,4 +20,12 @@ List<int> cardColorsDark = [
   0xff413839,
   0xff27292b,
   0xff343343,
+];
+
+// body pages
+List<Widget> body = [
+  const HomePage(),
+  const SearchAppointmentsPage(),
+  const UpdatesPage(),
+  const ProfilePage(),
 ];

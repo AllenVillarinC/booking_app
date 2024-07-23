@@ -12,22 +12,22 @@ class _HeaderAndMoreButtonState extends State<HeaderAndMoreButton> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             widget.header,
-            style:  TextStyle(
+            style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.bold,
               color: primary,
             ),
           ),
-           Text(
-            "More",
+          Text(
+            "View More",
             style: TextStyle(
-              fontSize: 16,
+              fontSize: 13,
               color: primary,
             ),
           ),

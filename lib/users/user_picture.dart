@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:booking_app/configs/imports.dart';
 
 class UserPicture extends StatefulWidget {
   final double size;
@@ -15,11 +15,17 @@ class _UserPictureState extends State<UserPicture> {
     return SizedBox(
       width: widget.size,
       height: widget.size,
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(widget.size / 2),
-        child: Image.asset(
-          widget.image,
-          fit: BoxFit.cover,
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(color: primary),
+          borderRadius: BorderRadius.circular(widget.size / 2),
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(widget.size / 2),
+          child: Image.asset(
+            widget.image,
+            fit: BoxFit.cover,
+          ),
         ),
       ),
     );

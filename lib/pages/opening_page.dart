@@ -8,20 +8,44 @@ class OpeningPage extends StatefulWidget {
 }
 
 class _OpeningPageState extends State<OpeningPage> {
-  int pageNumber = 0;
-  late ScrollController scrollController;
-
-  List<Widget> body = [
-    const HomePage(),
-    const AppointmentsPage(),
-    const UpdatesPage(),
-    const ProfilePage(),
-  ];
-
   @override
   void initState() {
     super.initState();
     scrollController = ScrollController();
+  }
+
+  void itemNumber(int value) {
+    setState(
+      () {
+        pageNumber = value;
+        if (pageNumber == 1) {
+          searchButtonState = Ionicons.search;
+          updatesButtonState = Ionicons.notifications_outline;
+          userProfileVisibility = false;
+          backVisibility = true;
+        } else if (pageNumber == 2) {
+          searchButtonState = Ionicons.search_outline;
+          updatesButtonState = Ionicons.notifications;
+          userProfileVisibility = false;
+          backVisibility = true;
+        } else if (pageNumber == 3) {
+          searchButtonState = Ionicons.search_outline;
+          updatesButtonState = Ionicons.notifications_outline;
+          userProfileVisibility = false;
+          backVisibility = true;
+        } else {
+          searchButtonState = Ionicons.search_outline;
+          updatesButtonState = Ionicons.notifications_outline;
+          userProfileVisibility = true;
+          backVisibility = false;
+        }
+        scrollController.animateTo(
+          scrollController.position.minScrollExtent,
+          curve: Curves.easeOut,
+          duration: const Duration(milliseconds: 700),
+        );
+      },
+    );
   }
 
   @override
@@ -31,97 +55,77 @@ class _OpeningPageState extends State<OpeningPage> {
         controller: scrollController,
         floatHeaderSlivers: true,
         headerSliverBuilder: (context, innerBoxIsScrolled) => [
-          // APPLICATION BAR
-          const CustomAppBar(),
-          // APPLICATION BAR
-        ],
-        body: SingleChildScrollView(
-          // MAIN APP BODY
-          child: body.elementAt(pageNumber),
-          // MAIN APP BODY
-        ),
-      ),
-      // BOTTOM NAVIGATION BAR
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          color: secondary,
-        ),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
-          child: GNav(
-            iconSize: 25,
-            textStyle: const TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-            ),
-            selectedIndex: pageNumber,
-            backgroundColor: secondary,
-            color: primary,
-            activeColor: Color(tabIconColor),
-            gap: 5,
-            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-            onTabChange: (value) {
-              setState(
-                () {
-                  if (value == 0) {
-                    tabIconColor = 0xff4472C4;
-                    tabIconChange0 = Ionicons.home;
-                    tabIconChange1 = Ionicons.calendar_outline;
-                    tabIconChange2 = Ionicons.notifications_outline;
-                  } else if (value == 1) {
-                    tabIconColor = 0xff2FF924;
-                    tabIconChange0 = Ionicons.home_outline;
-                    tabIconChange1 = Ionicons.calendar;
-                    tabIconChange2 = Ionicons.notifications_outline;
-                  } else if (value == 2) {
-                    tabIconColor = 0xffFFCE31;
-                    tabIconChange0 = Ionicons.home_outline;
-                    tabIconChange1 = Ionicons.calendar_outline;
-                    tabIconChange2 = Ionicons.notifications;
-                  } else {
-                    tabIconColor = 0xffffffff;
-                    tabIconChange0 = Ionicons.home_outline;
-                    tabIconChange1 = Ionicons.calendar_outline;
-                    tabIconChange2 = Ionicons.notifications_outline;
-                  }
-                  pageNumber = value;
-                  scrollController.animateTo(
-                    scrollController.position.minScrollExtent,
-                    curve: Curves.easeOut,
-                    duration: const Duration(milliseconds: 500),
-                  );
+          SliverAppBar(
+            systemOverlayStyle: const SystemUiOverlayStyle(
+                systemNavigationBarColor: Colors.transparent),
+            actions: [
+              IconButton(
+                onPressed: () {
+                  itemNumber(1);
                 },
-              );
-            },
-            tabs: [
-              GButton(
-                icon: tabIconChange0,
-                iconColor: Color(iconColor0),
-                text: "Home",
+                icon: Icon(searchButtonState),
+                color: primary,
               ),
-              GButton(
-                icon: tabIconChange1,
-                iconColor: Color(iconColor1),
-                text: "Appointments",
-              ),
-              GButton(
-                icon: tabIconChange2,
-                iconColor: Color(iconColor2),
-                text: "Updates",
-              ),
-              GButton(
-                leading: const UserPicture(
-                  size: 25,
-                  image: "assets/images/profile.jpeg",
-                ),
-                icon: tabIconChange3,
-                text: "You",
+              IconButton(
+                onPressed: () {
+                  itemNumber(2);
+                },
+                icon: Icon(updatesButtonState),
+                color: primary,
               ),
             ],
+            leading: Row(
+              children: [
+                Visibility(
+                  visible: userProfileVisibility,
+                  child: IconButton(
+                    onPressed: () {
+                      itemNumber(3);
+                    },
+                    icon: const Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(left: 10, right: 10),
+                          child: UserPicture(
+                              size: 35, image: "assets/images/profile.jpeg"),
+                        ),
+                        BlackText(blackText: "Eddard Stark", fontSize: 18),
+                      ],
+                    ),
+                  ),
+                ),
+                Visibility(
+                  visible: backVisibility,
+                  child: IconButton(
+                    onPressed: () {
+                      itemNumber(0);
+                    },
+                    icon: Row(
+                      children: [
+                        Icon(
+                          Ionicons.chevron_back,
+                          color: primary,
+                        ),
+                        const BlackText(blackText: "Back", fontSize: 18),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            leadingWidth: MediaQuery.of(context).size.width,
+            floating: true,
+            snap: true,
+            centerTitle: true,
+            backgroundColor: backgroundAppColor,
+          ), // App bar
+        ],
+        body: SingleChildScrollView(
+          child: Center(
+            child: body.elementAt(pageNumber), // Main app body
           ),
         ),
       ),
-      // BOTTOM NAVIGATION BAR
     );
   }
 }
