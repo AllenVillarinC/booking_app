@@ -20,3 +20,4 @@ export 'package:booking_app/widgets/listViewBuilders/list_creator.dart';
 export 'package:booking_app/widgets/texts/header_more_button.dart';
 export 'package:booking_app/widgets/cards/schedule_card.dart';
 export 'package:booking_app/widgets/cards/schedule_original_card.dart';
+export 'package:booking_app/widgets/texts/user_infotext.dart';

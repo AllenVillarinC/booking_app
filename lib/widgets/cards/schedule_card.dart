@@ -8,11 +8,8 @@ class ScheduleCard extends StatefulWidget {
 }
 
 class _ScheduleCardState extends State<ScheduleCard> {
-  Random random = Random();
-
   @override
   Widget build(BuildContext context) {
-    int randomNumber = random.nextInt(cardColorsDark.length);
     return Column(
       children: [
         Stack(
@@ -117,7 +114,7 @@ class _ScheduleCardState extends State<ScheduleCard> {
               bottomLeft: Radius.circular(cardRadius),
               bottomRight: Radius.circular(cardRadius),
             ),
-            color: Color(cardColorsDark[randomNumber]).withOpacity(0.5),
+            color: secondary,
           ),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),

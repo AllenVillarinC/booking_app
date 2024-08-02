@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
         //   ),
         //   child: SearchField(),
         // ),
-        const CustomDivider(),
+        // const CustomDivider(),
         const HeaderAndMoreButton(
           header: "Nearby",
         ),
@@ -44,7 +44,7 @@ class _HomePageState extends State<HomePage> {
         ),
         const CustomDivider(),
         SizedBox(
-          height: 220,
+          height: 230,
           child: ListView.builder(
             itemCount: 3,
             scrollDirection: Axis.horizontal,
