@@ -10,33 +10,58 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        children: [
-          const UserPicture(size: 150, image: "assets/images/profile.jpeg"),
-          const CustomDivider(),
-          const BlackText(blackText: "Eddard Stark", fontSize: 20),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xff111111), // Background color
-              side: const BorderSide(
-                  color: Colors.white, width: 1), // White border
+    return Container(
+      decoration: BoxDecoration(
+        gradient: RadialGradient(
+          colors: [Color(houseColors[avatarNumber]), secondary],
+          stops: const [0, 1],
+          center: Alignment.topCenter,
+        ),
+      ),
+      child: Center(
+        child: Column(
+          children: [
+            const CustomDivider(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                SizedBox(
+                  height: 60,
+                  width: 60,
+                  child: Image.asset(
+                      "assets/images/avatars/avatarhouses/${houseImage[avatarNumber]}"),
+                ),
+                UserPicture(
+                    size: 120,
+                    image:
+                        "assets/images/avatars/${avatarImage[avatarNumber]}"),
+                SizedBox(
+                  height: 60,
+                  width: 60,
+                  child: Image.asset(
+                      "assets/images/avatars/avatarhouses/${houseImage[avatarNumber]}"),
+                ),
+              ],
             ),
-            onPressed: () {},
-            child: Text(
-              "Change avatar",
-              style: TextStyle(color: primary), // Text color
+            const CustomDivider(),
+            BlackText(blackText: avatars[avatarNumber], fontSize: 20),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: secondary,
+                side: const BorderSide(color: Colors.white, width: 1),
+              ),
+              onPressed: () {
+                setState(() {
+                  avatarNumber = random.nextInt(avatars.length);
+                });
+              },
+              child: Text(
+                "Change avatar",
+                style: TextStyle(color: primary),
+              ),
             ),
-          ),
-          const CustomDivider(),
-          Container(
-            height: MediaQuery.of(context).size.height,
-            width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(
-              color: secondary,
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: Padding(
+            const CustomDivider(),
+            Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -104,30 +129,27 @@ class _ProfilePageState extends State<ProfilePage> {
                     style: TextStyle(color: Colors.red, fontSize: fontSize),
                   ),
                   const CustomDivider(),
-                  const CustomDivider(),
                   Align(
                     alignment: Alignment.center,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                          backgroundColor:
-                              const Color(0xff8b0000).withOpacity(0.15),
-                          side:
-                              const BorderSide(color: Colors.white, width: 1)),
+                        backgroundColor: const Color(0xff111111),
+                        side: const BorderSide(color: Colors.white, width: 1),
+                      ),
                       onPressed: () {},
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 50),
-                        child: Text(
-                          "Log out",
-                          style: TextStyle(color: primary),
-                        ),
+                      child: Text(
+                        "Log out",
+                        style: TextStyle(color: primary),
                       ),
                     ),
                   ),
+                  const CustomDivider(),
+                  const CustomDivider(),
                 ],
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

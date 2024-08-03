@@ -41,23 +41,17 @@ class _SearchAppointmentsPageState extends State<SearchAppointmentsPage> {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: SizedBox(
-            child: MediaQuery.removePadding(
-              context: context,
-              removeTop: true,
               child: ListView.builder(
-                physics: const NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                itemCount: 3,
-                scrollDirection: Axis.vertical,
-                itemBuilder: (context, index) {
-                  return const Padding(
-                    padding: EdgeInsets.only(bottom: 5),
-                    child: ScheduleoriginalCard(),
-                  );
-                },
-              ),
-            ),
-          ),
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: 5,
+            itemBuilder: (context, index) {
+              return const Padding(
+                padding: EdgeInsets.only(bottom: 10),
+                child: ScheduleoriginalCard(),
+              );
+            },
+          )),
         ),
       ],
     );

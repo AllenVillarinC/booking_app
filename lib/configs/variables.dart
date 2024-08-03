@@ -28,3 +28,7 @@ IoniconsData updatesButtonState = Ionicons.notifications_outline;
 late ScrollController scrollController;
 
 double fontSize = 11.5;
+
+int avatarNumber = 0;
+
+Random random = Random();

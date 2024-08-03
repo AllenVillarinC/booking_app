@@ -28,6 +28,10 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/images/avatars/
+    - assets/images/avatars/avatarhouses/
+
+
 
   fonts:
     - family: Montserrat
