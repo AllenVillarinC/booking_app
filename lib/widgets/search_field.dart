@@ -11,29 +11,29 @@ class _SearchFieldState extends State<SearchField> {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      style:  TextStyle(color: primary),
-      cursorColor: primary,
+      style: TextStyle(color: Theme.of(context).colorScheme.primary),
+      cursorColor: Theme.of(context).colorScheme.primary,
       decoration: InputDecoration(
         contentPadding: const EdgeInsets.symmetric(vertical: 10),
         prefixIcon: const Icon(Ionicons.search_outline),
-        prefixIconColor: primary,
+        prefixIconColor: Theme.of(context).colorScheme.primary,
         suffixIcon: const Icon(Ionicons.mic_outline),
-        suffixIconColor: primary,
+        suffixIconColor: Theme.of(context).colorScheme.primary,
         filled: true,
-        fillColor: secondary,
+        fillColor: Theme.of(context).colorScheme.surface,
         hintText: "Search services",
         hintStyle: TextStyle(
-          color: primary.withOpacity(0.7),
+          color: Theme.of(context).colorScheme.primary.withOpacity(0.7),
         ),
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(
-            color: primary.withOpacity(0.3),
+            color: Theme.of(context).colorScheme.primary.withOpacity(0.3),
           ),
           borderRadius: BorderRadius.circular(20),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide:  BorderSide(
-            color: primary,
+          borderSide: BorderSide(
+            color: Theme.of(context).colorScheme.primary,
           ),
           borderRadius: BorderRadius.circular(20),
         ),

@@ -1,5 +1,4 @@
 import 'package:booking_app/configs/imports.dart';
-import 'package:booking_app/configs/methods.dart';
 
 class OpeningPage extends StatefulWidget {
   const OpeningPage({super.key});
@@ -18,172 +17,160 @@ class _OpeningPageState extends State<OpeningPage> {
   void scrollToTop() {
     scrollController.animateTo(
       scrollController.position.minScrollExtent,
-      curve: Curves.bounceIn,
+      curve: Curves.linear,
       duration: Duration(milliseconds: millSecondsScrollUp),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: NestedScrollView(
-          controller: scrollController,
-          floatHeaderSlivers: true,
-          headerSliverBuilder: (context, innerBoxIsScrolled) => [
-            SliverAppBar(
-              systemOverlayStyle: const SystemUiOverlayStyle(
-                systemNavigationBarColor: Colors.transparent,
-                statusBarColor: Colors.transparent,
-              ),
-              actions: [
-                IconButton(
+    return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.surface,
+      body: NestedScrollView(
+        controller: scrollController,
+        floatHeaderSlivers: true,
+        headerSliverBuilder: (context, innerBoxIsScrolled) => [
+          SliverAppBar(
+            systemOverlayStyle: SystemUiOverlayStyle(
+              systemNavigationBarColor: Theme.of(context).colorScheme.surface,
+            ),
+            actions: [
+              Visibility(
+                visible: profileIconVisibility,
+                child: IconButton(
                   onPressed: () {
-                    // Search Appointments Page
+                    // Profile Page
                     setState(() {
-                      searchButtonState = Ionicons.search;
-                      updatesButtonState = Ionicons.notifications_outline;
-                      userProfileVisibility = false;
-                      backVisibility = true;
-                      homePageVisibility = false;
-                      searchAppointmentPageVisibility = true;
-                      updatesPageVisibility = false;
-                      profilePageVisibility = false;
-                      scrollToTop();
-                    });
-                  },
-                  icon: Icon(searchButtonState),
-                  color: primary,
-                ),
-                IconButton(
-                  onPressed: () {
-                    // Updates Page
-                    setState(() {
+                      Vibration.vibrate(duration: 10);
                       searchButtonState = Ionicons.search_outline;
-                      updatesButtonState = Ionicons.notifications;
-                      userProfileVisibility = false;
+                      updatesButtonState = Ionicons.notifications_outline;
+                      homeButtonState = Ionicons.home_outline;
+                      appTitleVisibility = false;
                       backVisibility = true;
                       homePageVisibility = false;
                       searchAppointmentPageVisibility = false;
-                      updatesPageVisibility = true;
-                      profilePageVisibility = false;
+                      updatesPageVisibility = false;
+                      profilePageVisibility = true;
+                      profileIconVisibility = false;
                       scrollToTop();
                     });
                   },
-                  icon: Icon(updatesButtonState),
-                  color: primary,
+                  icon: UserPicture(
+                    size: 25,
+                    image: "assets/images/avatars/${avatars[avatarNumber]}.png",
+                  ),
                 ),
-              ],
-              leading: Row(
-                children: [
-                  Visibility(
-                    visible: userProfileVisibility,
-                    child: IconButton(
-                      onPressed: () {
-                        // Profile Page
-                        setState(() {
-                          searchButtonState = Ionicons.search_outline;
-                          updatesButtonState = Ionicons.notifications_outline;
-                          userProfileVisibility = false;
-                          backVisibility = true;
-                          homePageVisibility = false;
-                          searchAppointmentPageVisibility = false;
-                          updatesPageVisibility = false;
-                          profilePageVisibility = true;
-                          scrollToTop();
-                        });
-                      },
-                      icon: Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(left: 10, right: 10),
-                            child: UserPicture(
-                                size: 40,
-                                image:
-                                    "assets/images/avatars/${avatarImage[avatarNumber]}"),
-                          ),
-                          BlackText(
-                              blackText:
-                                  extractFirstName(avatars[avatarNumber]),
-                              fontSize: 18),
-                        ],
-                      ),
-                    ).animate(autoPlay: true).fadeIn(
-                          duration: const Duration(milliseconds: 250),
-                        ),
-                  ),
-                  Visibility(
-                    visible: backVisibility,
-                    child: IconButton(
-                      onPressed: () {
-                        // Home Page
-                        setState(() {
-                          searchButtonState = Ionicons.search_outline;
-                          updatesButtonState = Ionicons.notifications_outline;
-                          userProfileVisibility = true;
-                          backVisibility = false;
-                          homePageVisibility = true;
-                          searchAppointmentPageVisibility = false;
-                          updatesPageVisibility = false;
-                          profilePageVisibility = false;
-                          scrollToTop();
-                        });
-                      },
-                      icon: Row(
-                        children: [
-                          Icon(
-                            Ionicons.chevron_back,
-                            color: primary,
-                            size: 30,
-                          ),
-                          const BlackText(blackText: "Home", fontSize: 18),
-                        ],
-                      ),
-                    ).animate(autoPlay: true).fadeIn(
-                          duration: const Duration(milliseconds: 250),
-                        ),
-                  ),
-                ],
               ),
-              leadingWidth: MediaQuery.of(context).size.width,
-              floating: true,
-              snap: true,
-              centerTitle: true,
-              backgroundColor: backgroundAppColor,
-            ), // App bar
-          ],
-          body: SingleChildScrollView(
-            child: Center(
-                child: Column(
-              children: [
-                Visibility(
-                  visible: homePageVisibility,
-                  child: const HomePage().animate().fadeIn(
-                        duration: Duration(milliseconds: millSecondsPage),
-                      ),
+              IconButton(
+                onPressed: () {
+                  // Home Page
+                  setState(() {
+                    Vibration.vibrate(duration: 10);
+                    searchButtonState = Ionicons.search_outline;
+                    updatesButtonState = Ionicons.notifications_outline;
+                    homeButtonState = Ionicons.home;
+                    appTitleVisibility = true;
+                    backVisibility = false;
+                    homePageVisibility = true;
+                    searchAppointmentPageVisibility = false;
+                    updatesPageVisibility = false;
+                    profilePageVisibility = false;
+                    profileIconVisibility = true;
+                    scrollToTop();
+                  });
+                },
+                icon: Icon(
+                  homeButtonState,
+                  size: 20,
                 ),
-                Visibility(
-                  visible: searchAppointmentPageVisibility,
-                  child: const SearchAppointmentsPage().animate().fadeIn(
-                        duration: Duration(milliseconds: millSecondsPage),
-                      ),
-                ),
-                Visibility(
-                  visible: updatesPageVisibility,
-                  child: const UpdatesPage().animate().fadeIn(
-                        duration: Duration(milliseconds: millSecondsPage),
-                      ),
-                ),
-                Visibility(
-                  visible: profilePageVisibility,
-                  child: const ProfilePage().animate().fadeIn(
-                        duration: Duration(milliseconds: millSecondsPage),
-                      ),
-                ),
-              ],
-            ) // Main app body
-                ),
+              ),
+              IconButton(
+                onPressed: () {
+                  // Updates Page
+                  setState(() {
+                    Vibration.vibrate(duration: 10);
+                    searchButtonState = Ionicons.search_outline;
+                    updatesButtonState = Ionicons.notifications;
+                    homeButtonState = Ionicons.home_outline;
+                    appTitleVisibility = false;
+                    backVisibility = true;
+                    homePageVisibility = false;
+                    searchAppointmentPageVisibility = false;
+                    updatesPageVisibility = true;
+                    profilePageVisibility = false;
+                    profileIconVisibility = true;
+                    scrollToTop();
+                  });
+                },
+                icon: Icon(updatesButtonState),
+                iconSize: 20,
+              ),
+              IconButton(
+                onPressed: () {
+                  // Search Appointments Page
+                  setState(() {
+                    Vibration.vibrate(duration: 10);
+                    searchButtonState = Ionicons.search;
+                    updatesButtonState = Ionicons.notifications_outline;
+                    homeButtonState = Ionicons.home_outline;
+                    appTitleVisibility = false;
+                    backVisibility = true;
+                    homePageVisibility = false;
+                    searchAppointmentPageVisibility = true;
+                    updatesPageVisibility = false;
+                    profilePageVisibility = false;
+                    profileIconVisibility = true;
+                    scrollToTop();
+                  });
+                },
+                icon: Icon(searchButtonState),
+                iconSize: 20,
+              ),
+            ],
+            leading: const Align(
+              alignment: Alignment.centerLeft,
+              child: Padding(
+                padding: EdgeInsets.only(left: 20),
+                child: BlackText(blackText: "BuzzUp", fontSize: 18),
+              ),
+            ),
+            leadingWidth: MediaQuery.of(context).size.width,
+            floating: true,
+            snap: true,
+            centerTitle: true,
+            backgroundColor: Theme.of(context).colorScheme.surface,
           ),
+        ],
+        body: SingleChildScrollView(
+          child: Center(
+              child: Stack(
+            children: [
+              Visibility(
+                visible: homePageVisibility,
+                child: const HomePage().animate().fadeIn(
+                      duration: Duration(milliseconds: millSecondsPage),
+                    ),
+              ),
+              Visibility(
+                visible: searchAppointmentPageVisibility,
+                child: const SearchAppointmentsPage().animate().fadeIn(
+                      duration: Duration(milliseconds: millSecondsPage),
+                    ),
+              ),
+              Visibility(
+                visible: updatesPageVisibility,
+                child: const UpdatesPage().animate().fadeIn(
+                      duration: Duration(milliseconds: millSecondsPage),
+                    ),
+              ),
+              Visibility(
+                visible: profilePageVisibility,
+                child: const ProfilePage().animate().fadeIn(
+                      duration: Duration(milliseconds: millSecondsPage),
+                    ),
+              ),
+            ],
+          )),
         ),
       ),
     );

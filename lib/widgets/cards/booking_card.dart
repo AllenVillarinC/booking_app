@@ -62,12 +62,12 @@ class _BookingCardState extends State<BookingCard> {
                             size: 15,
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 5),
+                        const Padding(
+                          padding: EdgeInsets.only(right: 5),
                           child: Text(
                             "4.7",
                             style: TextStyle(
-                                color: primary, fontWeight: FontWeight.bold),
+                                color: Colors.white, fontWeight: FontWeight.bold),
                           ),
                         ),
                         Padding(
@@ -75,27 +75,27 @@ class _BookingCardState extends State<BookingCard> {
                           child: Text(
                             "(180)",
                             style: TextStyle(
-                              color: primary.withOpacity(0.5),
+                              color: Colors.white.withOpacity(0.5),
                             ),
                           ),
                         ),
                       ],
                     ),
                     // Location
-                    Row(
+                    const Row(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(right: 5),
+                          padding: EdgeInsets.only(right: 5),
                           child: Icon(
                             Ionicons.location,
-                            color: primary,
+                            color: Colors.white,
                             size: 15,
                           ),
                         ),
                         Text(
                           "0.3 km",
                           style: TextStyle(
-                            color: primary,
+                            color: Colors.white,
                           ),
                         ),
                       ],
@@ -114,7 +114,7 @@ class _BookingCardState extends State<BookingCard> {
               bottomLeft: Radius.circular(cardRadius),
               bottomRight: Radius.circular(cardRadius),
             ),
-            color: secondary,
+            color: Theme.of(context).colorScheme.tertiary,
           ),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -137,7 +137,7 @@ class _BookingCardState extends State<BookingCard> {
                         child: Text(
                           "The Gentleman's Cut",
                           style: TextStyle(
-                            color: primary,
+                            color: Theme.of(context).colorScheme.primary,
                             fontSize: 12,
                           ),
                         ),
@@ -145,26 +145,21 @@ class _BookingCardState extends State<BookingCard> {
                     ],
                   ),
                 ),
-                Container(
-                  width: 100,
+                SizedBox(
                   height: 30,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(cardRadius),
-                    border: Border.all(
-                      width: 1,
-                      color: primary.withOpacity(0.5),
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Theme.of(context).colorScheme.secondary,
                     ),
-                  ),
-                  child: Center(
-                    child: Text(
+                    onPressed: () {},
+                    child: const Text(
                       "Book Now",
                       style: TextStyle(
-                        color: primary,
-                        fontSize: 13,
+                        fontSize: 10,
                       ),
                     ),
                   ),
-                ),
+                )
               ],
             ),
           ),

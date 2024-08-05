@@ -46,7 +46,9 @@ class _UpdatesPageState extends State<UpdatesPage> {
                                 fontSize: 12),
                             Text(
                               "Application is still in development",
-                              style: TextStyle(color: primary, fontSize: 12),
+                              style: TextStyle(
+                                  color: Theme.of(context).colorScheme.primary,
+                                  fontSize: 12),
                             )
                           ],
                         )

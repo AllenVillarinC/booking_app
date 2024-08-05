@@ -21,3 +21,5 @@ export 'package:booking_app/widgets/texts/header_more_button.dart';
 export 'package:booking_app/widgets/cards/schedule_card.dart';
 export 'package:booking_app/widgets/cards/schedule_original_card.dart';
 export 'package:booking_app/widgets/texts/user_infotext.dart';
+export 'package:booking_app/configs/methods.dart';
+export 'package:vibration/vibration.dart';

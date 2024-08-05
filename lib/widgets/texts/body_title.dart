@@ -22,17 +22,15 @@ class _BodyTitleState extends State<BodyTitle> {
           children: [
             Text(
               widget.blackText,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 25,
                 fontWeight: FontWeight.w700,
-                color: primary,
               ),
             ),
             Text(
               widget.supportText,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 25,
-                color: primary.withOpacity(0.5),
               ),
             ),
           ],

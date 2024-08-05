@@ -1,151 +1,406 @@
 List<String> avatars = [
-  "Jon Snow",
-  "Daenerys Targaryen",
-  "Tyrion Lannister",
-  "Arya Stark",
-  "Joffrey Baratheon",
-  // "Sansa Stark",
-  // "Cersei Lannister",
-  // "Jaime Lannister",
-  // "Bran Stark",
-  // "Robb Stark",
-  // "Stannis Baratheon",
-  // "Melisandre",
-  // "Davos Seaworth",
-  // "Theon Greyjoy",
-  // "Yara Greyjoy",
-  // "Eddard Stark",
-  // "Catelyn Stark",
-  // "Tywin Lannister",
-  // "Brienne of Tarth",
-  // "Samwell Tarly",
-  // "Jorah Mormont",
-  // "Sandor Clegane",
-  // "Petyr Baelish",
-  // "Varys",
-  // "Missandei",
-  // "Gendry",
-  // "Tormund Giantsbane",
-  // "Ygritte",
-  // "Margaery Tyrell",
-  // "Olenna Tyrell",
-  // "Rhaenyra Targaryen",
-  // "Daemon Targaryen",
-  // "Viserys I Targaryen",
-  // "Alicent Hightower",
-  // "Otto Hightower",
-  // "Corlys Velaryon",
-  // "Rhaenys Targaryen",
-  // "Laenor Velaryon",
-  // "Laena Velaryon",
-  // "Aegon II Targaryen",
-  // "Helaena Targaryen",
-  // "Aemond Targaryen",
-  // "Jacaerys Velaryon",
-  // "Lucerys Velaryon",
-  // "Joffrey Velaryon",
-  // "Ser Harwin Strong",
-  // "Larys Strong",
-  // "Mysaria",
-  // "Syrax",
-  // "Caraxes",
-  // "Vhagar",
-  // "Meleys",
-  // "Seasmoke",
-  // "Vermax",
-  // "Arrax",
-  // "Tyraxes",
-  // "Sunfyre",
-  // "Dreamfyre",
-  // "Moondancer",
-  // "Tessarion",
-  // "Silverwing",
-  // "Vermithor",
-  // "Sheepstealer",
-  // "Cannibal",
-  // "Grey Ghost"
+  "black-shirt-man-2",
+  "black-shirt-man",
+  "black-shirt-woman",
+  "blue-and-orange-shirt-woman",
+  "blue-green-shirt-woman-2",
+  "blue-green-shirt-woman",
+  "blue-pink-shirt-woman",
+  "blue-shirt-man",
+  "blue-shirt-man-2",
+  "blue-shirt-man-3",
+  "blue-shirt-man-4",
+  "blue-shirt-man-5",
+  "blue-shirt-man-6",
+  "blue-shirt-man-7",
+  "blue-shirt-woman",
+  "blue-shirt-woman-2",
+  "brown-shirt-man",
+  "dark-blue-shirt-man",
+  "green-purple-shirt-woman",
+  "green-shirt-man",
+  "green-shirt-man-2",
+  "green-shirt-man-3",
+  "green-shirt-man-4",
+  "green-shirt-man-5",
+  "green-shirt-man-6",
+  "green-shirt-man-7",
+  "green-shirt-man-8",
+  "green-shirt-man-9",
+  "green-shirt-man-10",
+  "green-shirt-woman",
+  "green-shirt-woman-2",
+  "grey-shirt-man",
+  "orange-shirt-man",
+  "orange-shirt-man-2",
+  "orange-shirt-man-3",
+  "orange-shirt-man-4",
+  "orange-shirt-woman",
+  "pink-shirt-man",
+  "pink-shirt-man-2",
+  "pink-shirt-woman",
+  "pink-shirt-woman-2",
+  "purple-shirt-man",
+  "purple-shirt-man-2",
+  "purple-shirt-man-3",
+  "purple-shirt-man-4",
+  "purple-shirt-man-5",
+  "purple-shirt-man-6",
+  "purple-shirt-woman",
+  "purple-shirt-woman-2",
+  "purple-shirt-woman-3",
+  "purple-shirt-woman-4",
+  "purple-shirt-woman-5",
+  "purple-shirt-woman-6",
+  "red-shirt-man",
+  "red-shirt-man-2",
+  "white-shirt-man",
+  "woman-with-beige-hijab",
+  "woman-with-beige-hijab-2",
+  "woman-with-beige-hijab-3",
+  "woman-with-blue-hijab",
+  "woman-with-orange-hijab",
+  "woman-with-pink-hijab",
+  "woman-with-purple-hijab",
+  "woman-with-red-hijab",
+  "yellow-green-shirt-woman",
+  "yellow-shirt-man",
+  "yellow-shirt-man-2",
+  "yellow-shirt-man-3",
+  "yellow-shirt-woman",
+  "yellow-shirt-woman-2",
 ];
 
-List<int> houseColors = [
-  0xff4d495b, // Stark
-  0xffd32f2f, // Targaryen
-  0xffeab64d, // Lannister
-  0xff4d495b, // Stark
-  0xff513f3f, // Baratheon
-  // 0xff4d495b, // Stark
-  // 0xffeab64d, // Lannister
-  // 0xffeab64d, // Lannister
-  // 0xff4d495b, // Stark
-  // 0xff4d495b, // Stark
-  // 0xff000000, // Baratheon
-  // 0xff000000, // None (Melisandre)
-  // 0xff000000, // None (Davos Seaworth)
-  // 0xff333333, // Greyjoy
-  // 0xff333333, // Greyjoy
-  // 0xff4d495b, // Stark
-  // 0xff4d495b, // Stark
-  // 0xffeab64d, // Lannister
-  // 0xff333333, // None (Brienne of Tarth)
-  // 0xff333333, // Tarly
-  // 0xff333333, // Mormont
-  // 0xff333333, // Clegane
-  // 0xff333333, // Baelish
-  // 0xff333333, // None (Varys)
-  // 0xff333333, // None (Missandei)
-  // 0xff333333, // Baratheon
-  // 0xff333333, // None (Tormund Giantsbane)
-  // 0xff333333, // None (Ygritte)
-  // 0xff4d8839, // Tyrell
-  // 0xff4d8839, // Tyrell
-  // 0xffd32f2f, // Targaryen
-  // 0xffd32f2f, // Targaryen
-  // 0xffd32f2f, // Targaryen
-  // 0xffd32f2f, // Targaryen (through marriage)
-  // 0xffd32f2f, // Hightower
-  // 0xff000080, // Velaryon
-  // 0xffd32f2f, // Targaryen (by birth)
-  // 0xff000080, // Velaryon
-  // 0xff000080, // Velaryon
-  // 0xffd32f2f, // Targaryen
-  // 0xffd32f2f, // Targaryen
-  // 0xffd32f2f, // Targaryen
-  // 0xff000080, // Velaryon
-  // 0xff000080, // Velaryon
-  // 0xff000080, // Velaryon
-  // 0xff333333, // Strong
-  // 0xff333333, // Strong
-  // 0xffd32f2f, // None (Mysaria)
-  // 0xffd32f2f, // Syrax
-  // 0xffd32f2f, // Caraxes
-  // 0xffd32f2f, // Vhagar
-  // 0xffd32f2f, // Meleys
-  // 0xff000080, // Seasmoke
-  // 0xffd32f2f, // Vermax
-  // 0xffd32f2f, // Arrax
-  // 0xffd32f2f, // Tyraxes
-  // 0xffd32f2f, // Sunfyre
-  // 0xffd32f2f, // Dreamfyre
-  // 0xffd32f2f, // Moondancer
-  // 0xffd32f2f, // Tessarion
-  // 0xffd32f2f, // Silverwing
-  // 0xffd32f2f, // Vermithor
-  // 0xffd32f2f, // Sheepstealer
-  // 0xffd32f2f, // Cannibal
-  // 0xffd32f2f, // Grey Ghost
+List<String> funNames = [
+  "Cheerful Dolphin",
+  "Mystic Unicorn",
+  "Playful Panda",
+  "Happy Lion",
+  "Jolly Tiger",
+  "Silly Monkey",
+  "Bright Fox",
+  "Brave Eagle",
+  "Cool Penguin",
+  "Quirky Owl",
+  "Nifty Zebra",
+  "Giggling Giraffe",
+  "Laughing Lemur",
+  "Witty Wolf",
+  "Daring Deer",
+  "Bouncy Bunny",
+  "Charming Cheetah",
+  "Funky Frog",
+  "Groovy Goat",
+  "Snazzy Snake",
+  "Zippy Zebra",
+  "Clever Cat",
+  "Dizzy Dog",
+  "Eager Elephant",
+  "Feisty Ferret",
+  "Gleeful Gecko",
+  "Hasty Horse",
+  "Jumpy Jackrabbit",
+  "Kooky Kangaroo",
+  "Lively Llama",
+  "Merry Meerkat",
+  "Peppy Parrot",
+  "Quaint Quail",
+  "Radiant Rabbit",
+  "Sprightly Squirrel",
+  "Twirling Turtle",
+  "Vivid Vulture",
+  "Whimsical Whale",
+  "Zany Zebra",
+  "Perky Peacock",
+  "Chipper Chipmunk",
+  "Dapper Dolphin",
+  "Fancy Flamingo",
+  "Giddy Gorilla",
+  "Hopping Hedgehog",
+  "Jovial Jaguar",
+  "Mischievous Monkey",
+  "Nimble Numbat",
+  "Optimistic Otter",
+  "Playful Platypus",
+  "Quirky Quokka",
+  "Rambunctious Rhino",
+  "Sassy Seahorse",
+  "Ticklish Tarantula",
+  "Uplifted Urchin",
+  "Vibrant Viper",
+  "Whisking Weasel",
+  "Zesty Zebra",
+  "Bouncing Bear",
+  "Cuddly Cat",
+  "Dancing Deer",
+  "Excited Elk",
+  "Fluffy Fox",
+  "Grinning Goat",
+  "Hustling Hedgehog",
+  "Invigorated Ibis",
+  "Jolly Jaguar",
+  "Kind Koala",
+  "Lively Lizard",
+  "Merry Meerkat",
+  "Naughty Numbat",
+  "Optimistic Owl",
+  "Peppy Pig",
+  "Quirky Quail",
+  "Radiant Rabbit",
+  "Sprightly Sloth",
+  "Twirling Toad",
+  "Unique Unicorn",
+  "Vivacious Vulture",
+  "Whimsical Wombat",
+  "Zippy Zebra",
+  "Amusing Anteater",
+  "Breezy Beaver",
+  "Cheerful Chinchilla",
+  "Delightful Dolphin",
+  "Energetic Emu",
+  "Funny Ferret",
+  "Giggling Giraffe",
+  "Happy Hamster",
+  "Invincible Iguana",
+  "Jubilant Jellyfish",
+  "Kicking Kangaroo",
+  "Lively Lemur",
+  "Merry Mouse",
+  "Nimble Newt",
+  "Optimistic Ostrich",
+  "Peppy Parakeet",
+  "Quirky Quokka",
+  "Radiant Raccoon",
+  "Sprightly Seal",
+  "Twirling Tiger",
+  "Unique Urchin",
+  "Vivacious Vixen",
+  "Whimsical Wolf",
+  "Zany Zebu",
+  "Amusing Aardvark",
+  "Breezy Badger",
+  "Cheerful Crane",
+  "Delightful Duck",
+  "Energetic Eel",
+  "Funny Fox",
+  "Giggling Goose",
+  "Happy Hummingbird",
+  "Invincible Ibex",
+  "Jubilant Jay",
+  "Kicking Kiwi",
+  "Lively Lark",
+  "Merry Magpie",
+  "Nimble Narwhal",
+  "Optimistic Ocelot",
+  "Peppy Pigeon",
+  "Quirky Quetzal",
+  "Radiant Rooster",
+  "Sprightly Sparrow",
+  "Twirling Toucan",
+  "Unique Uakari",
+  "Vivacious Vireo",
+  "Whimsical Wren",
+  "Zany Zorilla",
+  "Amusing Axolotl",
+  "Breezy Bison",
+  "Cheerful Chickadee",
+  "Delightful Dove",
+  "Energetic Egret",
+  "Funny Finch",
+  "Giggling Goldfinch",
+  "Happy Heron",
+  "Invincible Ibis",
+  "Jubilant Jackal",
+  "Kicking Kookaburra",
+  "Lively Lynx",
+  "Merry Manatee",
+  "Nimble Nightjar",
+  "Optimistic Oryx",
+  "Peppy Pelican",
+  "Quirky Quoll",
+  "Radiant Raven",
+  "Sprightly Stork",
+  "Twirling Tamarin",
+  "Unique Umbrellabird",
+  "Vivacious Vole",
+  "Whimsical Wombat",
+  "Zany Zebu",
+  "Breezy Bluebird",
+  "Cheerful Cardinal",
+  "Delightful Dingo",
+  "Energetic Eagle",
+  "Funny Firefly",
+  "Giggling Grackle",
+  "Happy Hoopoe",
+  "Invincible Iguanodon",
+  "Jubilant Jabiru",
+  "Kicking Kingfisher",
+  "Lively Loon",
+  "Merry Marmot",
+  "Nimble Nighthawk",
+  "Optimistic Otter",
+  "Peppy Puffin",
+  "Quirky Quail",
+  "Radiant Rhea",
+  "Sprightly Seagull",
+  "Twirling Tapir",
+  "Unique Urial",
+  "Vivacious Vicuña",
+  "Whimsical Wallaby",
+  "Zany Zebra",
+  "Breezy Bluejay",
+  "Cheerful Catfish",
+  "Delightful Dolphin",
+  "Energetic Eider",
+  "Funny Frog",
+  "Giggling Gull",
+  "Happy Hawk",
+  "Invincible Ibis",
+  "Jubilant Jay",
+  "Kicking Kestrel",
+  "Lively Llama",
+  "Merry Mink",
+  "Nimble Newt",
+  "Optimistic Orca",
+  "Peppy Parrot",
+  "Quirky Quokka",
+  "Radiant Rabbit",
+  "Sprightly Salamander",
+  "Twirling Tortoise",
+  "Unique Urchin",
+  "Vivacious Vulture",
+  "Whimsical Whale",
+  "Zany Zebu",
+  "Cheerful Balloon",
+  "Quirky Robot",
+  "Witty Car",
+  "Radiant Kite",
+  "Gleeful Bicycle",
+  "Bright Rainbow",
+  "Mystic Mountain",
+  "Charming River",
+  "Groovy Star",
+  "Bouncy Ball",
+  "Hasty Train",
+  "Jumpy Rocket",
+  "Snazzy Plane",
+  "Silly Boat",
+  "Vivid Scooter",
+  "Lively Bus",
+  "Peppy Skateboard",
+  "Dizzy Carousel",
+  "Witty Submarine",
+  "Brave Truck",
+  "Cool Helicopter",
+  "Funky Blimp",
+  "Cheerful Lighthouse",
+  "Mystic Volcano",
+  "Playful Planet",
+  "Happy Comet",
+  "Jolly Satellite",
+  "Silly Spaceship",
+  "Bright Galaxy",
+  "Brave Asteroid",
+  "Cool Meteor",
+  "Quirky Nebula",
+  "Nifty Blackhole",
+  "Giggling Starlight",
+  "Laughing Supernova",
+  "Witty Constellation",
+  "Daring Equinox",
+  "Bouncy Solstice",
+  "Charming Eclipse",
+  "Funky Aurora",
+  "Groovy Sunset",
+  "Snazzy Sunrise",
+  "Zippy Moonlight",
+  "Clever Sunshine",
+  "Dizzy Twilight",
+  "Eager Stardust",
+  "Feisty Cosmos",
+  "Gleeful Orbit",
+  "Hasty Horizon",
+  "Jumpy Pulsar",
+  "Kooky Quasar",
+  "Lively Magnetar",
+  "Merry Gravity",
+  "Peppy Photon",
+  "Quaint Proton",
+  "Radiant Electron",
+  "Sprightly Neutron",
+  "Twirling Atom",
+  "Vivid Molecule",
+  "Whimsical Plasma",
+  "Zany Ion",
+  "Perky Neutrino",
+  "Chipper Quark",
+  "Dapper Gluon",
+  "Fancy Boson",
+  "Giddy Fermion",
+  "Hopping Photon",
+  "Jovial Neutrino",
+  "Mischievous Proton",
+  "Nimble Electron",
+  "Optimistic Neutron",
+  "Playful Nucleus",
+  "Quirky Nucleon",
+  "Rambunctious Nucleon",
+  "Sassy Ion",
+  "Ticklish Photon",
+  "Uplifted Electron",
+  "Vibrant Proton",
+  "Whisking Neutrino",
+  "Zesty Quark"
 ];
 
-List<String> avatarImage = [
-  "jonsnow.jpg",
-  "daenerys.jpg",
-  "tyrion.jpg",
-  "arya.jpg",
-  "joffrey.jpg",
-];
-
-List<String> houseImage = [
-  "stark.png",
-  "targaryen.png",
-  "lannister.png",
-  "stark.png",
-  "baratheon.png",
+List<int> backgroundColors = [
+  0xffe6194b, // Red
+  0xff3cb44b, // Green
+  0xffffe119, // Yellow
+  0xff4363d8, // Blue
+  0xfff58231, // Orange
+  0xff911eb4, // Purple
+  0xff46f0f0, // Cyan
+  0xfff032e6, // Magenta
+  0xffbcf60c, // Lime
+  0xfffabebe, // Pink
+  0xff008080, // Teal
+  0xffe6beff, // Lavender
+  0xff9a6324, // Brown
+  0xfffffac8, // Beige
+  0xff800000, // Maroon
+  0xffaaffc3, // Mint
+  0xff808000, // Olive
+  0xffffd8b1, // Coral
+  0xff000075, // Navy
+  0xff808080, // Grey
+  0xffffff00, // Yellow
+  0xff0000ff, // Blue
+  0xff00ff00, // Green
+  0xffff0000, // Red
+  0xff800080, // Purple
+  0xff00ffff, // Aqua
+  0xffff00ff, // Fuchsia
+  0xffffff99, // Light Yellow
+  0xffcc33ff, // Purple
+  0xffffcc00, // Yellow
+  0xff66ff66, // Light Green
+  0xffff6699, // Light Red
+  0xff9933ff, // Dark Purple
+  0xff33cccc, // Turquoise
+  0xffff3366, // Reddish Pink
+  0xffccff33, // Lime Green
+  0xffffccff, // Light Pink
+  0xff3366ff, // Light Blue
+  0xffffff33, // Light Yellow
+  0xffff9933, // Light Orange
+  0xff663399, // Dark Purple
+  0xff99ffcc, // Light Teal
+  0xffff3399, // Bright Pink
+  0xff33ccff, // Sky Blue
+  0xffccff66, // Pale Green
+  0xff99ccff, // Baby Blue
+  0xffff9966, // Peach
+  0xff669966, // Dark Green
+  0xff6666cc  // Medium Purple
 ];

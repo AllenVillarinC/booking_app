@@ -3,14 +3,15 @@ import 'package:booking_app/configs/imports.dart';
 class UserInfotext extends StatefulWidget {
   final String label;
   final String text;
-  const UserInfotext({super.key, required this.label, required this.text});
+  final IoniconsData icon;
+  const UserInfotext(
+      {super.key, required this.label, required this.text, required this.icon});
 
   @override
   State<UserInfotext> createState() => _UserInfotextState();
 }
 
 class _UserInfotextState extends State<UserInfotext> {
-  
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -21,11 +22,20 @@ class _UserInfotextState extends State<UserInfotext> {
           children: [
             Text(
               widget.label,
-              style: TextStyle(color: primary, fontSize: fontSize),
+              style: TextStyle(fontSize: fontSize),
             ),
-            Text(
-              widget.text,
-              style: TextStyle(color: primary, fontSize: fontSize),
+            Row(
+              children: [
+                Text(
+                  widget.text,
+                  style: TextStyle(fontSize: fontSize),
+                ),
+                const SizedBox(width: 5),
+                Icon(
+                  widget.icon,
+                  size: 10,
+                )
+              ],
             )
           ],
         ),

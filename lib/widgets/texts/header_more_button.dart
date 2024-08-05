@@ -18,17 +18,17 @@ class _HeaderAndMoreButtonState extends State<HeaderAndMoreButton> {
         children: [
           Text(
             widget.header,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.bold,
-              color: primary,
+
             ),
           ),
-          Text(
+          const Text(
             "View More",
             style: TextStyle(
               fontSize: 13,
-              color: primary,
+
             ),
           ),
         ],

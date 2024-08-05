@@ -1,10 +1,5 @@
 import 'package:booking_app/configs/imports.dart';
 
-// app theme
-Color primary = const Color(0xffffffff);
-Color secondary = const Color(0xff111111);
-Color backgroundAppColor = const Color(0xff010101);
-
 // card radius variable
 double cardRadius = 15;
 
@@ -15,20 +10,32 @@ bool homePageVisibility = true;
 bool searchAppointmentPageVisibility = false;
 bool updatesPageVisibility = false;
 bool profilePageVisibility = false;
+bool profileIconVisibility = true;
 // page transition duration
-int millSecondsPage = 500;
+int millSecondsPage = 250;
 // page scrollup duration
-int millSecondsScrollUp = 700;
+int millSecondsScrollUp = 500;
 
 bool backVisibility = false;
-bool userProfileVisibility = true;
+bool appTitleVisibility = true;
 
 IoniconsData searchButtonState = Ionicons.search_outline;
 IoniconsData updatesButtonState = Ionicons.notifications_outline;
+IoniconsData homeButtonState = Ionicons.home;
+IoniconsData lightModeButtonState = Ionicons.sunny;
+IoniconsData darkModeButtonState = Ionicons.moon;
+
 late ScrollController scrollController;
 
 double fontSize = 11.5;
 
 int avatarNumber = 0;
+int avatarNameNumber = 0;
+int avatarBackgroundNumber = 0;
 
 Random random = Random();
+
+bool lightModeActive = false;
+bool darkModeActive = true;
+
+String mode = "Light mode";

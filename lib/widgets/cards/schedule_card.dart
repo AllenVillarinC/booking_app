@@ -62,12 +62,12 @@ class _ScheduleCardState extends State<ScheduleCard> {
                             size: 15,
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 5),
+                        const Padding(
+                          padding: EdgeInsets.only(right: 5),
                           child: Text(
                             "4.7",
                             style: TextStyle(
-                                color: primary, fontWeight: FontWeight.bold),
+                                color: Colors.white, fontWeight: FontWeight.bold),
                           ),
                         ),
                         Padding(
@@ -75,27 +75,27 @@ class _ScheduleCardState extends State<ScheduleCard> {
                           child: Text(
                             "(180)",
                             style: TextStyle(
-                              color: primary.withOpacity(0.5),
+                              color: Colors.white.withOpacity(0.5),
                             ),
                           ),
                         ),
                       ],
                     ),
                     // Location
-                    Row(
+                    const Row(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(right: 5),
+                          padding: EdgeInsets.only(right: 5),
                           child: Icon(
                             Ionicons.location,
-                            color: primary,
+                            color: Colors.white,
                             size: 15,
                           ),
                         ),
                         Text(
                           "0.3 km",
                           style: TextStyle(
-                            color: primary,
+                            color: Colors.white,
                           ),
                         ),
                       ],
@@ -114,7 +114,7 @@ class _ScheduleCardState extends State<ScheduleCard> {
               bottomLeft: Radius.circular(cardRadius),
               bottomRight: Radius.circular(cardRadius),
             ),
-            color: secondary,
+            color: Theme.of(context).colorScheme.tertiary,
           ),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -141,19 +141,28 @@ class _ScheduleCardState extends State<ScheduleCard> {
                             children: [
                               Text(
                                 "The Gentleman's Cut",
-                                style: TextStyle(color: primary, fontSize: 15),
+                                style: TextStyle(
+                                    color:
+                                        Theme.of(context).colorScheme.primary,
+                                    fontSize: 15),
                               ),
                               Row(
                                 children: [
                                   Text(
                                     "March 1, 2024, ",
-                                    style:
-                                        TextStyle(color: primary, fontSize: 15),
+                                    style: TextStyle(
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .primary,
+                                        fontSize: 15),
                                   ),
                                   Text(
                                     "09:00 am",
                                     style: TextStyle(
-                                        color: primary.withOpacity(0.7),
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .primary
+                                            .withOpacity(0.7),
                                         fontSize: 15,
                                         fontWeight: FontWeight.bold),
                                   ),
@@ -166,21 +175,22 @@ class _ScheduleCardState extends State<ScheduleCard> {
                     ),
                   ],
                 ),
-                Container(
-                  height: 30,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(cardRadius),
-                    border: Border.all(
-                      width: 1,
-                      color: primary.withOpacity(0.5),
-                    ),
-                  ),
-                  child: Center(
-                    child: Text(
-                      "Schedule Details",
-                      style: TextStyle(
-                        color: primary,
-                        fontSize: 13,
+                Align(
+                  alignment: Alignment.center,
+                  child: SizedBox(
+                    height: 30,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor:
+                            Theme.of(context).colorScheme.secondary,
+                      ),
+                      onPressed: () {},
+                      child: Text(
+                        "Schedule Details",
+                        style: TextStyle(
+                          color: Theme.of(context).colorScheme.primary,
+                          fontSize: 10,
+                        ),
                       ),
                     ),
                   ),

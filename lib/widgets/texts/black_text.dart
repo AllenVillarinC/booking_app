@@ -17,7 +17,6 @@ class _BlackTextState extends State<BlackText> {
       style: TextStyle(
         fontWeight: FontWeight.bold,
         fontSize: widget.fontSize,
-        color: primary,
       ),
     );
   }
