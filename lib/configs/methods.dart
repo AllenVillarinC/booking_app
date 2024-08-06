@@ -21,3 +21,11 @@ ThemeData darkMode = ThemeData(
     tertiary: Color(0xff1c1c1c),
   ),
 );
+
+void scrollToTop() {
+  scrollController.animateTo(
+    scrollController.position.minScrollExtent,
+    curve: Curves.linear,
+    duration: Duration(milliseconds: millSecondsScrollUp),
+  );
+}

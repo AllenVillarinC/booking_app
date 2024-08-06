@@ -3,27 +3,22 @@ import 'package:booking_app/configs/imports.dart';
 // card radius variable
 double cardRadius = 15;
 
-// body page index
-int pageNumber = 0;
 // page visibility for animation prompts
 bool homePageVisibility = true;
 bool searchAppointmentPageVisibility = false;
 bool updatesPageVisibility = false;
 bool profilePageVisibility = false;
 bool profileIconVisibility = true;
+
 // page transition duration
 int millSecondsPage = 250;
+
 // page scrollup duration
 int millSecondsScrollUp = 500;
-
-bool backVisibility = false;
-bool appTitleVisibility = true;
 
 IoniconsData searchButtonState = Ionicons.search_outline;
 IoniconsData updatesButtonState = Ionicons.notifications_outline;
 IoniconsData homeButtonState = Ionicons.home;
-IoniconsData lightModeButtonState = Ionicons.sunny;
-IoniconsData darkModeButtonState = Ionicons.moon;
 
 late ScrollController scrollController;
 
@@ -38,4 +33,6 @@ Random random = Random();
 bool lightModeActive = false;
 bool darkModeActive = true;
 
-String mode = "Light mode";
+String mode = "Dark mode";
+
+double navIconSize = 20;

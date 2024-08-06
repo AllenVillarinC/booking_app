@@ -11,28 +11,31 @@ class HeaderAndMoreButton extends StatefulWidget {
 class _HeaderAndMoreButtonState extends State<HeaderAndMoreButton> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            widget.header,
-            style: const TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-
-            ),
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                widget.header,
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const Text(
+                "View More",
+                style: TextStyle(
+                  fontSize: 13,
+                ),
+              ),
+            ],
           ),
-          const Text(
-            "View More",
-            style: TextStyle(
-              fontSize: 13,
-
-            ),
-          ),
-        ],
-      ),
+        ),
+        const CustomDivider(),
+      ],
     );
   }
 }

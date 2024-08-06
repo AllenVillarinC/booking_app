@@ -1,6 +1,4 @@
 import 'package:booking_app/configs/imports.dart';
-import 'package:booking_app/configs/theme_provider.dart';
-import 'package:provider/provider.dart';
 
 void main() {
   runApp(

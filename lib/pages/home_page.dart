@@ -11,38 +11,16 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        const BodyTitle(
-          blackText: 'Book ',
-          supportText: 'an appointment',
-        ),
-        // const CustomDivider(),
-        // const Padding(
-        //   padding: EdgeInsets.only(
-        //     right: 20,
-        //   ),
-        //   child: SearchField(),
-        // ),
-        // const CustomDivider(),
-        const HeaderAndMoreButton(
-          header: "Nearby",
-        ),
-        const CustomDivider(),
-        const ListCreator(
-          card: BookingCard(),
-        ),
-        const HeaderAndMoreButton(
-          header: "Popular",
-        ),
-        const CustomDivider(),
-        const ListCreator(
-          card: BookingCard(),
-        ),
-        const HeaderAndMoreButton(
-          header: "Upcoming Appointments",
-        ),
-        const CustomDivider(),
+        const Padding(
+            padding: EdgeInsets.only(left: 20),
+            child:
+                BodyTitle(blackText: 'Book ', supportText: 'an appointment')),
+        const HeaderAndMoreButton(header: "Nearby"),
+        const ListCreator(card: BookingCard()),
+        const HeaderAndMoreButton(header: "Popular"),
+        const ListCreator(card: BookingCard()),
+        const HeaderAndMoreButton(header: "Upcoming Appointments"),
         SizedBox(
           height: 230,
           child: ListView.builder(
@@ -50,9 +28,7 @@ class _HomePageState extends State<HomePage> {
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
               return const Padding(
-                padding: EdgeInsets.only(left: 20),
-                child: ScheduleCard(),
-              );
+                  padding: EdgeInsets.only(left: 20), child: ScheduleCard());
             },
           ),
         ),

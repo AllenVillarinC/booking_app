@@ -15,32 +15,22 @@ class _SearchAppointmentsPageState extends State<SearchAppointmentsPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const BodyTitle(
-          blackText: "Search ",
-          supportText: "an appointment",
-        ),
-        const CustomDivider(),
-        const Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: 20,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const BodyTitle(
+            blackText: "Search ",
+            supportText: "an appointment",
           ),
-          child: SearchField(),
-        ),
-        const CustomDivider(),
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
-          child: BlackText(
+          const SearchField(),
+          const BlackText(
             blackText: "Search results",
             fontSize: 16,
           ),
-        ),
-        const CustomDivider(),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: SizedBox(
+          const CustomDivider(),
+          SizedBox(
             child: MediaQuery.removePadding(
               context: context,
               removeTop: true,
@@ -58,8 +48,8 @@ class _SearchAppointmentsPageState extends State<SearchAppointmentsPage> {
               ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

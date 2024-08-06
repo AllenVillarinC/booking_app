@@ -1,6 +1,4 @@
 import 'package:booking_app/configs/imports.dart';
-import 'package:booking_app/configs/theme_provider.dart';
-import 'package:provider/provider.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -32,7 +30,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 avatarBackgroundNumber =
                     random.nextInt(backgroundColors.length);
                 avatarNameNumber = random.nextInt(funNames.length);
-                Vibration.vibrate(duration: 10);
+                Vibration.vibrate(pattern: [20, 100, 20, 100]);
               });
             },
             child: const Text(
@@ -135,7 +133,8 @@ class _ProfilePageState extends State<ProfilePage> {
                                       begin: Alignment.topRight,
                                       end: Alignment.bottomLeft,
                                     ),
-                                    borderRadius: BorderRadius.circular(33/2)),
+                                    borderRadius:
+                                        BorderRadius.circular(33 / 2)),
                                 child: IconButton(
                                   onPressed: () {
                                     setState(() {
@@ -145,6 +144,16 @@ class _ProfilePageState extends State<ProfilePage> {
                                           .toggleTheme();
                                       darkModeActive = false;
                                       lightModeActive = true;
+                                      Vibration.vibrate(pattern: [
+                                        20,
+                                        30,
+                                        20,
+                                        30,
+                                        20,
+                                        30,
+                                        20,
+                                        30
+                                      ]);
                                     });
                                   },
                                   icon: const Icon(
@@ -170,7 +179,8 @@ class _ProfilePageState extends State<ProfilePage> {
                                       begin: Alignment.topRight,
                                       end: Alignment.bottomLeft,
                                     ),
-                                    borderRadius: BorderRadius.circular(33/2)),
+                                    borderRadius:
+                                        BorderRadius.circular(33 / 2)),
                                 child: IconButton(
                                   onPressed: () {
                                     setState(() {
@@ -180,6 +190,8 @@ class _ProfilePageState extends State<ProfilePage> {
                                           .toggleTheme();
                                       darkModeActive = true;
                                       lightModeActive = false;
+                                      Vibration.vibrate(
+                                          pattern: [20, 10, 50, 30]);
                                     });
                                   },
                                   icon: const Icon(

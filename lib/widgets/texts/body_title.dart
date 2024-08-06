@@ -13,29 +13,31 @@ class BodyTitle extends StatefulWidget {
 class _BodyTitleState extends State<BodyTitle> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: SizedBox(
-        width: MediaQuery.of(context).size.width,
-        child: Wrap(
-          crossAxisAlignment: WrapCrossAlignment.start,
-          children: [
-            Text(
-              widget.blackText,
-              style: const TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.w700,
+    return Column(
+      children: [
+        SizedBox(
+          width: MediaQuery.of(context).size.width,
+          child: Wrap(
+            crossAxisAlignment: WrapCrossAlignment.start,
+            children: [
+              Text(
+                widget.blackText,
+                style: const TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.w700,
+                ),
               ),
-            ),
-            Text(
-              widget.supportText,
-              style: const TextStyle(
-                fontSize: 25,
+              Text(
+                widget.supportText,
+                style: const TextStyle(
+                  fontSize: 25,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
-      ),
+        const CustomDivider(),
+      ],
     );
   }
 }
