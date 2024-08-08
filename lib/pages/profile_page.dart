@@ -43,7 +43,7 @@ class _ProfilePageState extends State<ProfilePage> {
         const CustomDivider(),
         ElevatedButton(
           style: ElevatedButton.styleFrom(
-            backgroundColor: Theme.of(context).colorScheme.tertiary,
+            backgroundColor: Theme.of(context).colorScheme.surface,
           ),
           onPressed: () {
             setState(() {
