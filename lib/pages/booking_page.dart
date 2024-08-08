@@ -31,6 +31,8 @@ class _BookingPageState extends State<BookingPage> {
     '5:00 PM'
   ];
 
+  final _overlayController = OverlayPortalController();
+
   @override
   Widget build(BuildContext context) {
     double fontSize = 11.5;
@@ -40,202 +42,207 @@ class _BookingPageState extends State<BookingPage> {
       appBar: AppBar(
         title: const BlackText(blackText: "BuzzUp"),
       ),
-      body: Center(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Stack(
-              children: [
-                Container(
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage("assets/images/barber_shop.jpg"),
-                        fit: BoxFit.cover),
-                  ),
-                  height: MediaQuery.of(context).size.height * 0.3,
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        const Color(0xff000000).withOpacity(0.9),
-                        Colors.transparent
-                      ],
-                      stops: const [0, 1],
-                      begin: Alignment.bottomCenter,
-                      end: Alignment.topCenter,
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Stack(
+                children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: 300,
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage("assets/images/barber_shop.jpg"),
+                          fit: BoxFit.cover),
                     ),
                   ),
-                  height: MediaQuery.of(context).size.height * 0.3,
-                  child: Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        const UserPicture(
-                            size: 150,
-                            image: "assets/images/sample_picture.jpg"),
-                        const Text(
-                          "The Gentleman's Cut",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                              color: Colors.white),
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Icon(Ionicons.location, size: 15),
-                            Text(
-                              "12-225 Address street",
-                              style: TextStyle(
-                                  fontSize: fontSize, color: Colors.white),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Padding(
-                              padding: EdgeInsets.only(right: 5),
-                              child: Icon(
-                                Ionicons.star,
-                                color: Color(0xffFFCE31),
-                                size: 15,
-                              ),
-                            ),
-                            const Padding(
-                              padding: EdgeInsets.only(right: 5),
-                              child: Text(
-                                "4.7",
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: 300,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [
+                          const Color(0xff000000).withOpacity(0.9),
+                          Colors.transparent
+                        ],
+                        stops: const [0, 1],
+                        begin: Alignment.bottomCenter,
+                        end: Alignment.topCenter,
+                      ),
+                    ),
+                    child: Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          const UserPicture(
+                              size: 150,
+                              image: "assets/images/sample_picture.jpg"),
+                          const Text(
+                            "The Gentleman's Cut",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                color: Colors.white),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Icon(Ionicons.location, size: 15),
+                              Text(
+                                "12-225 Address street",
                                 style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold),
+                                    fontSize: fontSize, color: Colors.white),
                               ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(right: 5),
-                              child: Text(
-                                "(180)",
-                                style: TextStyle(
-                                  color: Colors.white.withOpacity(0.5),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Padding(
+                                padding: EdgeInsets.only(right: 5),
+                                child: Icon(
+                                  Ionicons.star,
+                                  color: Color(0xffFFCE31),
+                                  size: 15,
                                 ),
                               ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            const CustomDivider(),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    "Service Information",
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  ),
-                  const Text(
-                      "Step into our barber shop and experience the art of men's grooming redefined with precision, style, and unparalleled service."),
-                  const CustomDivider(),
-                  const Text(
-                    "Services",
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  ),
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text("Men's haircut"),
-                      Text("\$ 30.00"),
-                    ],
-                  ),
-                  const CustomDivider(),
-                  Container(
-                      color: Theme.of(context)
-                          .colorScheme
-                          .primary
-                          .withOpacity(0.5),
-                      height: 0.5),
-                  const CustomDivider(),
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text("Total"),
-                      Text(
-                        "\$ 30.00",
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                    ],
-                  ),
-                  const CustomDivider(),
-                  const Text(
-                    "Select Date and Time",
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  ),
-                  const CustomDivider(),
-                  const CustomDivider(),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      DropdownButton<String>(
-                        value: selectedDate,
-                        items: dates.map((String date) {
-                          return DropdownMenuItem<String>(
-                            value: date,
-                            child: Text(date),
-                          );
-                        }).toList(),
-                        onChanged: (String? newValue) {
-                          setState(() {
-                            selectedDate = newValue!;
-                          });
-                        },
-                      ),
-                      DropdownButton<String>(
-                        value: selectedTime,
-                        items: times.map((String time) {
-                          return DropdownMenuItem<String>(
-                            value: time,
-                            child: Text(time),
-                          );
-                        }).toList(),
-                        onChanged: (String? newValue) {
-                          setState(() {
-                            selectedTime = newValue!;
-                          });
-                        },
-                      ),
-                    ],
-                  ),
-                  const CustomDivider(),
-                  const CustomDivider(),
-                  Align(
-                    alignment: Alignment.center,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor:
-                            Theme.of(context).colorScheme.secondary,
-                      ),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const BookingRequestPage()),
-                        );
-                      },
-                      child: const Text(
-                        "Book appointment",
+                              const Padding(
+                                padding: EdgeInsets.only(right: 5),
+                                child: Text(
+                                  "4.7",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(right: 5),
+                                child: Text(
+                                  "(180)",
+                                  style: TextStyle(
+                                    color: Colors.white.withOpacity(0.5),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
                     ),
                   ),
                 ],
               ),
-            ),
-          ],
+              const CustomDivider(),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      "Service Information",
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    ),
+                    const Text(
+                        "Step into our barber shop and experience the art of men's grooming redefined with precision, style, and unparalleled service."),
+                    const CustomDivider(),
+                    const Text(
+                      "Services",
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    ),
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("Men's haircut"),
+                        Text("\$ 30.00"),
+                      ],
+                    ),
+                    const CustomDivider(),
+                    Container(
+                        color: Theme.of(context)
+                            .colorScheme
+                            .primary
+                            .withOpacity(0.5),
+                        height: 0.5),
+                    const CustomDivider(),
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("Total"),
+                        Text(
+                          "\$ 30.00",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                    const CustomDivider(),
+                    const Text(
+                      "Select Date and Time",
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    ),
+                    const CustomDivider(),
+                    const CustomDivider(),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        DropdownButton<String>(
+                          value: selectedDate,
+                          items: dates.map((String date) {
+                            return DropdownMenuItem<String>(
+                              value: date,
+                              child: Text(date),
+                            );
+                          }).toList(),
+                          onChanged: (String? newValue) {
+                            setState(() {
+                              selectedDate = newValue!;
+                            });
+                          },
+                        ),
+                        DropdownButton<String>(
+                          value: selectedTime,
+                          items: times.map((String time) {
+                            return DropdownMenuItem<String>(
+                              value: time,
+                              child: Text(time),
+                            );
+                          }).toList(),
+                          onChanged: (String? newValue) {
+                            setState(() {
+                              selectedTime = newValue!;
+                            });
+                          },
+                        ),
+                      ],
+                    ),
+                    const CustomDivider(),
+                    const CustomDivider(),
+                    Align(
+                      alignment: Alignment.center,
+                      child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor:
+                                Theme.of(context).colorScheme.surface,
+                          ),
+                          onPressed: _overlayController.toggle,
+                          child: OverlayPortal(
+                            controller: _overlayController,
+                            overlayChildBuilder: (BuildContext context) {
+                              return const BookingRequestPage();
+                            },
+                            child: const Text("Book Appointment"),
+                          )),
+                    ),
+                    const CustomDivider(),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

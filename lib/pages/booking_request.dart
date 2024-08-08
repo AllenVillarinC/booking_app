@@ -30,7 +30,7 @@ class _BookingRequestPageState extends State<BookingRequestPage> {
               const CustomDivider(),
               const CustomDivider(),
               const Text(
-                "Thank you for using BuzzUp to book your appointment and support small businesses. Please wait for the business to confirm your appointment.",
+                "Thank you for using BuzzUp to book your appointment at The Gentleman's Cut. \n\nPlease wait for the business to confirm your appointment.",
                 style: TextStyle(fontSize: 13),
                 textAlign: TextAlign.center,
               ),
@@ -40,24 +40,13 @@ class _BookingRequestPageState extends State<BookingRequestPage> {
                 alignment: Alignment.center,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Theme.of(context).colorScheme.secondary,
+                    backgroundColor: Theme.of(context).colorScheme.surface,
                   ),
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const MainPage()),
-                    );
-                    setState(() {
-                      pageIndex = 2;
-                      homeIcon = Ionicons.home_outline;
-                      calendarIcon = Ionicons.calendar_outline;
-                      notificationIcon = Ionicons.notifications;
-                      searchIcon = Ionicons.search_outline;
-                      personIcon = Ionicons.person_outline;
-                    });
+                    Navigator.pop(context);
                   },
                   child: const Text(
-                    "View booking status",
+                    "Return to Home",
                   ),
                 ),
               ),

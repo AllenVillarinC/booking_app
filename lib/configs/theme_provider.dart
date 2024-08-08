@@ -9,7 +9,6 @@ ThemeData lightMode = ThemeData(
   brightness: Brightness.light,
   colorScheme: const ColorScheme.light(
     surface: Color(0xfff8f8ff),
-    // surface: Color(0xffeeeeee),
     primary: Color(0xff000000),
     secondary: Color(0xfffefefa),
     tertiary: Color(0xfffbfaf2),
