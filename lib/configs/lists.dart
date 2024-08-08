@@ -402,5 +402,5 @@ List<int> backgroundColors = [
   0xff99ccff, // Baby Blue
   0xffff9966, // Peach
   0xff669966, // Dark Green
-  0xff6666cc  // Medium Purple
+  0xff6666cc // Medium Purple
 ];

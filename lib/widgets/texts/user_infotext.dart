@@ -12,6 +12,8 @@ class UserInfotext extends StatefulWidget {
 }
 
 class _UserInfotextState extends State<UserInfotext> {
+  double fontSize = 11.5;
+
   @override
   Widget build(BuildContext context) {
     return Column(

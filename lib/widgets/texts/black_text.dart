@@ -2,8 +2,8 @@ import 'package:booking_app/configs/imports.dart';
 
 class BlackText extends StatefulWidget {
   final String blackText;
-  final double fontSize;
-  const BlackText({super.key, required this.blackText, required this.fontSize});
+
+  const BlackText({super.key, required this.blackText});
 
   @override
   State<BlackText> createState() => _BlackTextState();
@@ -14,9 +14,9 @@ class _BlackTextState extends State<BlackText> {
   Widget build(BuildContext context) {
     return Text(
       widget.blackText,
-      style: TextStyle(
+      style: const TextStyle(
         fontWeight: FontWeight.bold,
-        fontSize: widget.fontSize,
+        fontSize: 20,
       ),
     );
   }

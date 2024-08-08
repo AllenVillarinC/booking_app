@@ -8,6 +8,8 @@ class ScheduleoriginalCard extends StatefulWidget {
 }
 
 class _ScheduleoriginalCardState extends State<ScheduleoriginalCard> {
+  double cardRadius = 15;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -15,36 +17,28 @@ class _ScheduleoriginalCardState extends State<ScheduleoriginalCard> {
         Stack(
           children: [
             Container(
-              height: 120,
-              width: MediaQuery.of(context).size.width,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage("assets/images/barber_shop.jpg"),
-                    fit: BoxFit.cover),
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(15),
-                  topRight: Radius.circular(15),
-                ),
-              ),
-            ),
-            Container(
-              height: 120,
+              height: 100,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    const Color(0xff000000).withOpacity(0.9),
-                    Colors.transparent
-                  ],
-                  stops: const [0, 1],
-                  begin: Alignment.bottomCenter,
-                  end: Alignment.topCenter,
-                ),
-                borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(15),
-                  topRight: Radius.circular(15),
-                ),
-              ),
+                  image: const DecorationImage(
+                      image: AssetImage("assets/images/barber_shop.jpg"),
+                      fit: BoxFit.cover),
+                  borderRadius: BorderRadius.circular(cardRadius)),
+            ),
+            Container(
+              height: 100,
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      const Color(0xff000000).withOpacity(0.9),
+                      Colors.transparent
+                    ],
+                    stops: const [0, 1],
+                    begin: Alignment.bottomCenter,
+                    end: Alignment.topCenter,
+                  ),
+                  borderRadius: BorderRadius.circular(cardRadius)),
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: Row(
@@ -108,14 +102,14 @@ class _ScheduleoriginalCardState extends State<ScheduleoriginalCard> {
           ],
         ),
         Container(
-          height: 100,
+          height: 70,
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
-            borderRadius: const BorderRadius.only(
-              bottomLeft: Radius.circular(15),
-              bottomRight: Radius.circular(15),
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(cardRadius),
+              bottomRight: Radius.circular(cardRadius),
             ),
-            color: Theme.of(context).colorScheme.tertiary,
+            color: Theme.of(context).colorScheme.surface,
           ),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -145,7 +139,7 @@ class _ScheduleoriginalCardState extends State<ScheduleoriginalCard> {
                                 style: TextStyle(
                                     color:
                                         Theme.of(context).colorScheme.primary,
-                                    fontSize: 15),
+                                    fontSize: 13),
                               ),
                               Row(
                                 children: [
@@ -155,7 +149,7 @@ class _ScheduleoriginalCardState extends State<ScheduleoriginalCard> {
                                         color: Theme.of(context)
                                             .colorScheme
                                             .primary,
-                                        fontSize: 15),
+                                        fontSize: 12),
                                   ),
                                   Text(
                                     "09:00 am",
@@ -163,7 +157,7 @@ class _ScheduleoriginalCardState extends State<ScheduleoriginalCard> {
                                         color: Theme.of(context)
                                             .colorScheme
                                             .primary,
-                                        fontSize: 15,
+                                        fontSize: 12,
                                         fontWeight: FontWeight.bold),
                                   ),
                                 ],
@@ -174,26 +168,6 @@ class _ScheduleoriginalCardState extends State<ScheduleoriginalCard> {
                       ),
                     ),
                   ],
-                ),
-                Align(
-                  alignment: Alignment.center,
-                  child: SizedBox(
-                    height: 30,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor:
-                            Theme.of(context).colorScheme.secondary,
-                      ),
-                      onPressed: () {},
-                      child: Text(
-                        "Schedule Details",
-                        style: TextStyle(
-                          color: Theme.of(context).colorScheme.primary,
-                          fontSize: 10,
-                        ),
-                      ),
-                    ),
-                  ),
                 ),
               ],
             ),

@@ -15,25 +15,28 @@ class _BodyTitleState extends State<BodyTitle> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(
-          width: MediaQuery.of(context).size.width,
-          child: Wrap(
-            crossAxisAlignment: WrapCrossAlignment.start,
-            children: [
-              Text(
-                widget.blackText,
-                style: const TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.w700,
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: SizedBox(
+            width: MediaQuery.of(context).size.width,
+            child: Wrap(
+              crossAxisAlignment: WrapCrossAlignment.start,
+              children: [
+                Text(
+                  widget.blackText,
+                  style: const TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
-              Text(
-                widget.supportText,
-                style: const TextStyle(
-                  fontSize: 25,
+                Text(
+                  widget.supportText,
+                  style: const TextStyle(
+                    fontSize: 25,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
         const CustomDivider(),

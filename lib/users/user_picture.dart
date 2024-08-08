@@ -17,8 +17,8 @@ class _UserPictureState extends State<UserPicture> {
       height: widget.size,
       child: Container(
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(widget.size / 2),
-            color: Color(backgroundColors[avatarBackgroundNumber])),
+          borderRadius: BorderRadius.circular(widget.size / 2),
+        ),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(widget.size / 2),
           child: Image.asset(

@@ -18,6 +18,7 @@ dependencies:
   flutter_animate: ^4.5.0
   vibration: ^1.9.0
   provider:
+  lottie: ^3.1.2
 
 dev_dependencies:
   flutter_test:
@@ -31,10 +32,11 @@ flutter:
   assets:
     - assets/images/
     - assets/images/avatars/
+    - assets/lottie/
 
   fonts:
     - family: Montserrat
       fonts:
-        - asset: assets/fonts/Montserrat/Montserrat-Regular.ttf
-        - asset: assets/fonts/Montserrat/Montserrat-Black.ttf
+        - asset: assets/fonts/montserrat/Montserrat-Regular.ttf
+        - asset: assets/fonts/montserrat/Montserrat-Black.ttf
           weight: 700

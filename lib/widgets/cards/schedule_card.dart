@@ -8,6 +8,8 @@ class ScheduleCard extends StatefulWidget {
 }
 
 class _ScheduleCardState extends State<ScheduleCard> {
+  double cardRadius = 15;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -16,20 +18,16 @@ class _ScheduleCardState extends State<ScheduleCard> {
           children: [
             Container(
               height: 120,
-              width: MediaQuery.of(context).size.width * 0.90,
+              width: MediaQuery.of(context).size.width * 0.85,
               decoration: BoxDecoration(
-                image: const DecorationImage(
-                    image: AssetImage("assets/images/barber_shop.jpg"),
-                    fit: BoxFit.cover),
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(cardRadius),
-                  topRight: Radius.circular(cardRadius),
-                ),
-              ),
+                  image: const DecorationImage(
+                      image: AssetImage("assets/images/barber_shop.jpg"),
+                      fit: BoxFit.cover),
+                  borderRadius: BorderRadius.circular(cardRadius)),
             ),
             Container(
               height: 120,
-              width: MediaQuery.of(context).size.width * 0.90,
+              width: MediaQuery.of(context).size.width * 0.85,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
@@ -40,10 +38,7 @@ class _ScheduleCardState extends State<ScheduleCard> {
                   begin: Alignment.bottomCenter,
                   end: Alignment.topCenter,
                 ),
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(cardRadius),
-                  topRight: Radius.circular(cardRadius),
-                ),
+                borderRadius: BorderRadius.circular(cardRadius)
               ),
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -67,7 +62,8 @@ class _ScheduleCardState extends State<ScheduleCard> {
                           child: Text(
                             "4.7",
                             style: TextStyle(
-                                color: Colors.white, fontWeight: FontWeight.bold),
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
                           ),
                         ),
                         Padding(
@@ -107,14 +103,14 @@ class _ScheduleCardState extends State<ScheduleCard> {
           ],
         ),
         Container(
-          height: 100,
-          width: MediaQuery.of(context).size.width * 0.90,
+          height: 70,
+          width: MediaQuery.of(context).size.width * 0.85,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(cardRadius),
               bottomRight: Radius.circular(cardRadius),
             ),
-            color: Theme.of(context).colorScheme.tertiary,
+            color: Theme.of(context).colorScheme.surface,
           ),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -174,26 +170,6 @@ class _ScheduleCardState extends State<ScheduleCard> {
                       ),
                     ),
                   ],
-                ),
-                Align(
-                  alignment: Alignment.center,
-                  child: SizedBox(
-                    height: 30,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor:
-                            Theme.of(context).colorScheme.secondary,
-                      ),
-                      onPressed: () {},
-                      child: Text(
-                        "Schedule Details",
-                        style: TextStyle(
-                          color: Theme.of(context).colorScheme.primary,
-                          fontSize: 10,
-                        ),
-                      ),
-                    ),
-                  ),
                 ),
               ],
             ),

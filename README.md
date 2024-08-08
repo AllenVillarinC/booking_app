@@ -1,4 +1,4 @@
-# BuzzUp, A flutter bookiing application for small businesses
+# BuzzUp, A flutter booking application for small businesses
 
 BuzzUp is a versatile booking application specifically designed for small businesses, including barbers, aestheticians, and other personal service providers. Our platform streamlines the appointment scheduling process, enhancing customer experience and optimizing business operations.
 
