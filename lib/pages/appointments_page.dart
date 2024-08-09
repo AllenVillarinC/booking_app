@@ -12,6 +12,7 @@ class _AppointmentsPageState extends State<AppointmentsPage> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        const CustomDivider(),
         const BodyTitle(blackText: "Upcoming ", supportText: "appointments"),
         SizedBox(
           child: MediaQuery.removePadding(

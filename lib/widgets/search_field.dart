@@ -23,7 +23,7 @@ class _SearchFieldState extends State<SearchField> {
             suffixIconColor: Theme.of(context).colorScheme.primary,
             filled: true,
             fillColor: Theme.of(context).colorScheme.surface,
-            hintText: "Search",
+            hintText: "Search services",
             hintStyle: TextStyle(
               color: Theme.of(context).colorScheme.primary.withOpacity(0.7),
             ),

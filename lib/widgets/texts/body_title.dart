@@ -25,15 +25,14 @@ class _BodyTitleState extends State<BodyTitle> {
                 Text(
                   widget.blackText,
                   style: const TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                  ),
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                      fontStyle: FontStyle.italic),
                 ),
                 Text(
                   widget.supportText,
                   style: const TextStyle(
-                    fontSize: 25,
-                  ),
+                      fontSize: 25, fontStyle: FontStyle.italic),
                 ),
               ],
             ),

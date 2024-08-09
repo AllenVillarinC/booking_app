@@ -16,42 +16,89 @@ class _SearchAppointmentsPageState extends State<SearchAppointmentsPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const BodyTitle(
-          blackText: "Search ",
-          supportText: "services",
+    return Scaffold(
+      appBar: AppBar(
+        iconTheme: const IconThemeData(color: Colors.white),
+        title: const Text(
+          "REAZY",
+          style: TextStyle(
+              fontSize: 25,
+              fontStyle: FontStyle.italic,
+              fontWeight: FontWeight.bold,
+              color: Colors.white),
         ),
-        Padding(
-          padding: const EdgeInsets.only(left: 20, right: 10),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SearchField(),
-              const BlackText(
-                blackText: "Search results",
-              ),
-              const CustomDivider(),
-              SizedBox(
-                child: MediaQuery.removePadding(
-                  context: context,
-                  removeTop: true,
-                  child: ListView.builder(
-                    physics: const NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    itemCount: 5,
-                    scrollDirection: Axis.vertical,
-                    itemBuilder: (context, index) {
-                      return const SearchResultCard();
-                    },
-                  ),
-                ),
-              ),
-            ],
+        actions: [
+          IconButton(
+            onPressed: () {
+              showModalBottomSheet(
+                showDragHandle: true,
+                context: context,
+                builder: (BuildContext context) {
+                  return const SizedBox(child: UpdatesPage());
+                },
+              );
+            },
+            icon: Icon(
+              notificationIcon,
+              color: Colors.white,
+            ),
           ),
-        )
-      ],
+        ],
+        backgroundColor: Theme.of(context).colorScheme.surface,
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Theme.of(context).colorScheme.secondary,
+                Theme.of(context).colorScheme.tertiary
+              ],
+              stops: const [0, 1],
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+            ),
+          ),
+        ),
+      ),
+      body: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const CustomDivider(),
+            const BodyTitle(
+              blackText: "Search ",
+              supportText: "services",
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SearchField(),
+                  const BlackText(
+                    blackText: "Search results",
+                  ),
+                  const CustomDivider(),
+                  SizedBox(
+                    child: MediaQuery.removePadding(
+                      context: context,
+                      removeTop: true,
+                      child: ListView.builder(
+                        physics: const NeverScrollableScrollPhysics(),
+                        shrinkWrap: true,
+                        itemCount: 5,
+                        scrollDirection: Axis.vertical,
+                        itemBuilder: (context, index) {
+                          return const SearchResultCard();
+                        },
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 }

@@ -21,6 +21,7 @@ class _ProfilePageState extends State<ProfilePage> {
     return Column(
       children: [
         const CustomDivider(),
+        const CustomDivider(),
         SizedBox(
           width: imageWidthHeight,
           height: imageWidthHeight,
@@ -43,14 +44,13 @@ class _ProfilePageState extends State<ProfilePage> {
         const CustomDivider(),
         ElevatedButton(
           style: ElevatedButton.styleFrom(
-            backgroundColor: Theme.of(context).colorScheme.surface,
-          ),
+              backgroundColor: Theme.of(context).colorScheme.surface,
+              elevation: 3),
           onPressed: () {
             setState(() {
               avatarNumber = random.nextInt(avatars.length);
               avatarBackgroundNumber = random.nextInt(backgroundColors.length);
               avatarNameNumber = random.nextInt(funNames.length);
-              Vibration.vibrate(pattern: [20, 100, 20, 100]);
             });
           },
           child: const Text(
@@ -152,13 +152,12 @@ class _ProfilePageState extends State<ProfilePage> {
                               decoration: BoxDecoration(
                                   gradient: const LinearGradient(
                                     colors: [
-                                      Color(0xff2774ae),
-                                      Color(0xff002e5d),
-                                      Color(0xff002e5d)
+                                      Color(0xff780206),
+                                      Color(0xff061161)
                                     ],
-                                    stops: [0, 0.5, 1],
-                                    begin: Alignment.topRight,
-                                    end: Alignment.bottomLeft,
+                                    stops: [0, 1],
+                                    begin: Alignment.centerLeft,
+                                    end: Alignment.centerRight,
                                   ),
                                   borderRadius: BorderRadius.circular(33 / 2)),
                               child: IconButton(
@@ -205,8 +204,6 @@ class _ProfilePageState extends State<ProfilePage> {
                                         .toggleTheme();
                                     darkModeActive = true;
                                     lightModeActive = false;
-                                    Vibration.vibrate(
-                                        pattern: [20, 10, 50, 30]);
                                   });
                                 },
                                 icon: const Icon(

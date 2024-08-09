@@ -26,14 +26,16 @@ class _BookingRequestPageState extends State<BookingRequestPage> {
                   fit: BoxFit.contain,
                 ),
               ),
-              const BlackText(blackText: "Booking request sent!"),
+              const BlackText(blackText: "Booking request sent!")
+                  .animate()
+                  .fade(delay: const Duration(milliseconds: 2000)),
               const CustomDivider(),
               const CustomDivider(),
               const Text(
-                "Thank you for using BuzzUp to book your appointment at The Gentleman's Cut. \n\nPlease wait for the business to confirm your appointment.",
+                "Thank you for using BuzzUp to book your appointment at The Gentleman's Cut. \n\nPlease wait for your apppointment confirmation.",
                 style: TextStyle(fontSize: 13),
                 textAlign: TextAlign.center,
-              ),
+              ).animate().fadeIn(delay: const Duration(milliseconds: 2800)),
               const CustomDivider(),
               const CustomDivider(),
               Align(

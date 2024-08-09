@@ -66,6 +66,7 @@ class _HomePageState extends State<HomePage> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        const CustomDivider(),
         const BodyTitle(blackText: 'Book ', supportText: 'an appointment'),
         const Padding(
           padding: EdgeInsets.only(left: 20),

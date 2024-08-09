@@ -35,7 +35,7 @@ class _UpdateCardsState extends State<UpdateCards> {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(right: 10),
-                  child: UserPicture(size: 50, image: widget.userPicture),
+                  child: UserPicture(size: 45, image: widget.userPicture),
                 ),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,

@@ -224,18 +224,19 @@ class _BookingPageState extends State<BookingPage> {
                     Align(
                       alignment: Alignment.center,
                       child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor:
-                                Theme.of(context).colorScheme.surface,
-                          ),
-                          onPressed: _overlayController.toggle,
-                          child: OverlayPortal(
-                            controller: _overlayController,
-                            overlayChildBuilder: (BuildContext context) {
-                              return const BookingRequestPage();
-                            },
-                            child: const Text("Book Appointment"),
-                          )),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor:
+                              Theme.of(context).colorScheme.surface,
+                        ),
+                        onPressed: _overlayController.toggle,
+                        child: OverlayPortal(
+                          controller: _overlayController,
+                          overlayChildBuilder: (BuildContext context) {
+                            return const BookingRequestPage();
+                          },
+                          child: const Text("Book Appointment"),
+                        ),
+                      ),
                     ),
                     const CustomDivider(),
                   ],

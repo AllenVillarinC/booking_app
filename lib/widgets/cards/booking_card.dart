@@ -25,7 +25,7 @@ class _BookingCardState extends State<BookingCard> {
             children: [
               Container(
                 height: 100,
-                width: MediaQuery.of(context).size.width * 0.8,
+                width: MediaQuery.of(context).size.width * 0.65,
                 decoration: BoxDecoration(
                     image: const DecorationImage(
                         image: AssetImage("assets/images/barber_shop.jpg"),
@@ -34,7 +34,7 @@ class _BookingCardState extends State<BookingCard> {
               ),
               Container(
                 height: 100,
-                width: MediaQuery.of(context).size.width * 0.8,
+                width: MediaQuery.of(context).size.width * 0.65,
                 decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
@@ -110,7 +110,7 @@ class _BookingCardState extends State<BookingCard> {
           ),
           Container(
             height: 50,
-            width: MediaQuery.of(context).size.width * 0.8,
+            width: MediaQuery.of(context).size.width * 0.65,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(cardRadius),

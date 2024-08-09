@@ -28,8 +28,6 @@ class _MainPageState extends State<MainPage> {
   List<Widget> body = [
     const HomePage(),
     const AppointmentsPage(),
-    const UpdatesPage(),
-    const SearchAppointmentsPage(),
     const ProfilePage(),
   ];
 
@@ -38,9 +36,8 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
       bottomNavigationBar: BottomNavigationBar(
-        selectedFontSize: 10,
-        showUnselectedLabels: false,
         type: BottomNavigationBarType.fixed,
+        showUnselectedLabels: true,
         backgroundColor: Theme.of(context).colorScheme.surface,
         unselectedItemColor:
             Theme.of(context).colorScheme.primary.withOpacity(0.3),
@@ -56,18 +53,6 @@ class _MainPageState extends State<MainPage> {
               searchIcon = Ionicons.search_outline;
               personIcon = Ionicons.person_outline;
             } else if (index == 2) {
-              homeIcon = Ionicons.home_outline;
-              calendarIcon = Ionicons.calendar_outline;
-              notificationIcon = Ionicons.notifications;
-              searchIcon = Ionicons.search_outline;
-              personIcon = Ionicons.person_outline;
-            } else if (index == 3) {
-              homeIcon = Ionicons.home_outline;
-              calendarIcon = Ionicons.calendar_outline;
-              notificationIcon = Ionicons.notifications_outline;
-              searchIcon = Ionicons.search;
-              personIcon = Ionicons.person_outline;
-            } else if (index == 4) {
               homeIcon = Ionicons.home_outline;
               calendarIcon = Ionicons.calendar_outline;
               notificationIcon = Ionicons.notifications_outline;
@@ -93,14 +78,6 @@ class _MainPageState extends State<MainPage> {
             icon: Icon(calendarIcon),
           ),
           BottomNavigationBarItem(
-            label: "Updates",
-            icon: Icon(notificationIcon),
-          ),
-          BottomNavigationBarItem(
-            label: "Search",
-            icon: Icon(searchIcon),
-          ),
-          BottomNavigationBarItem(
             label: "Profile",
             icon: Icon(personIcon),
           ),
@@ -111,37 +88,72 @@ class _MainPageState extends State<MainPage> {
         floatHeaderSlivers: true,
         headerSliverBuilder: (context, innerBoxIsScrolled) => [
           SliverAppBar(
-              systemOverlayStyle: SystemUiOverlayStyle(
-                  systemNavigationBarColor:
-                      Theme.of(context).colorScheme.surface),
-              title: Container(
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(20),
-                      topRight: Radius.circular(20)),
-                  gradient: LinearGradient(
-                    colors: [Color(0xff780206), Color(0xff061161)],
-                    stops: [0, 1],
-                    begin: Alignment.centerLeft,
-                    end: Alignment.centerRight,
-                  ),
-                ),
-                child: const Center(
-                  child: Text(
-                    "Reazy",
-                    style: TextStyle(
-                      fontSize: 30,
+            systemOverlayStyle: SystemUiOverlayStyle(
+                systemNavigationBarColor:
+                    Theme.of(context).colorScheme.surface),
+            leading: const Padding(
+              padding: EdgeInsets.only(left: 10),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "REAZY",
+                  style: TextStyle(
+                      fontSize: 25,
                       fontStyle: FontStyle.italic,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
+                      color: Colors.white),
                 ),
               ),
-              floating: true,
-              snap: true,
-              centerTitle: true,
-              backgroundColor: Theme.of(context).colorScheme.surface),
+            ),
+            actions: [
+              IconButton(
+                onPressed: () {
+                  showModalBottomSheet(
+                      showDragHandle: true,
+                      context: context,
+                      builder: (BuildContext context) {
+                        return const SizedBox(child: UpdatesPage());
+                      });
+                },
+                icon: Icon(
+                  notificationIcon,
+                  color: Colors.white,
+                ),
+              ),
+              IconButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            const SearchAppointmentsPage()),
+                  );
+                },
+                icon: const Icon(
+                  Ionicons.search_outline,
+                  color: Colors.white,
+                ),
+              )
+            ],
+            leadingWidth: MediaQuery.of(context).size.width,
+            floating: true,
+            snap: true,
+            centerTitle: true,
+            backgroundColor: Theme.of(context).colorScheme.surface,
+            flexibleSpace: Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    Theme.of(context).colorScheme.secondary,
+                    Theme.of(context).colorScheme.tertiary
+                  ],
+                  stops: const [0, 1],
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                ),
+              ),
+            ),
+          ),
         ],
         body: SingleChildScrollView(
           child: Center(child: body[pageIndex]),
