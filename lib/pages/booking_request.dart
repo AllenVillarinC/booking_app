@@ -44,14 +44,26 @@ class _BookingRequestPageState extends State<BookingRequestPage> {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Theme.of(context).colorScheme.surface,
                   ),
+                  onPressed: () {},
+                  child: const Text("Check appointment status"),
+                ),
+              ).animate().fadeIn(delay: const Duration(milliseconds: 3000)),
+              Align(
+                alignment: Alignment.center,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor:
+                        Theme.of(context).colorScheme.primary.withOpacity(0.5),
+                  ),
                   onPressed: () {
                     Navigator.pop(context);
                   },
                   child: const Text(
                     "Return to Home",
+                    style: TextStyle(color: Colors.white),
                   ),
                 ),
-              ),
+              ).animate().fadeIn(delay: const Duration(milliseconds: 3200)),
             ],
           ),
         ),

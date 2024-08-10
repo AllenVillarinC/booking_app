@@ -61,6 +61,23 @@ class _HomePageState extends State<HomePage> {
     ),
   ];
 
+  List<Widget> categoryPage = [
+    const Barbers(),
+    const Salons(),
+    const Manicures(),
+    const Pedicures(),
+    const Spas(),
+  ];
+
+  void navigateToCategory(int index) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => categoryPage[index],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -84,9 +101,14 @@ class _HomePageState extends State<HomePage> {
             itemBuilder: (context, index) {
               return Padding(
                 padding: const EdgeInsets.only(right: 5),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [categories[index], categoryName[index]],
+                child: GestureDetector(
+                  onTap: () {
+                    navigateToCategory(index);
+                  },
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [categories[index], categoryName[index]],
+                  ),
                 ),
               );
             },

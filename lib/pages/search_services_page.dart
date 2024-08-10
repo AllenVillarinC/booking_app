@@ -1,5 +1,4 @@
 import 'package:booking_app/configs/imports.dart';
-import 'package:booking_app/widgets/cards/search_result_card.dart';
 import 'package:intl/intl.dart';
 
 class SearchAppointmentsPage extends StatefulWidget {
@@ -17,16 +16,8 @@ class _SearchAppointmentsPageState extends State<SearchAppointmentsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.white),
-        title: const Text(
-          "REAZY",
-          style: TextStyle(
-              fontSize: 25,
-              fontStyle: FontStyle.italic,
-              fontWeight: FontWeight.bold,
-              color: Colors.white),
-        ),
         actions: [
           IconButton(
             onPressed: () {
@@ -38,28 +29,13 @@ class _SearchAppointmentsPageState extends State<SearchAppointmentsPage> {
                 },
               );
             },
-            icon: Icon(
-              notificationIcon,
-              color: Colors.white,
+            icon: const Icon(
+              Ionicons.notifications,
             ),
-          ),
+          )
         ],
-        backgroundColor: Theme.of(context).colorScheme.surface,
-        flexibleSpace: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                Theme.of(context).colorScheme.secondary,
-                Theme.of(context).colorScheme.tertiary
-              ],
-              stops: const [0, 1],
-              begin: Alignment.centerLeft,
-              end: Alignment.centerRight,
-            ),
-          ),
-        ),
       ),
-      body: SafeArea(
+      body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

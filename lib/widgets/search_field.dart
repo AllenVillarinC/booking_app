@@ -13,14 +13,13 @@ class _SearchFieldState extends State<SearchField> {
     return Column(
       children: [
         TextField(
+          autofocus: true,
           style: TextStyle(color: Theme.of(context).colorScheme.primary),
           cursorColor: Theme.of(context).colorScheme.primary,
           decoration: InputDecoration(
             contentPadding: const EdgeInsets.symmetric(vertical: 10),
             prefixIcon: const Icon(Ionicons.search_outline),
             prefixIconColor: Theme.of(context).colorScheme.primary,
-            suffixIcon: const Icon(Ionicons.mic_outline),
-            suffixIconColor: Theme.of(context).colorScheme.primary,
             filled: true,
             fillColor: Theme.of(context).colorScheme.surface,
             hintText: "Search services",

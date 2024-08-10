@@ -40,7 +40,33 @@ class _BookingPageState extends State<BookingPage> {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(
-        title: const BlackText(blackText: "BuzzUp"),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const SearchAppointmentsPage()),
+              );
+            },
+            icon: const Icon(
+              Ionicons.search,
+            ),
+          ),
+          IconButton(
+            onPressed: () {
+              showModalBottomSheet(
+                  showDragHandle: true,
+                  context: context,
+                  builder: (BuildContext context) {
+                    return const SizedBox(child: UpdatesPage());
+                  });
+            },
+            icon: const Icon(
+              Ionicons.notifications,
+            ),
+          )
+        ],
       ),
       body: SingleChildScrollView(
         child: Center(
