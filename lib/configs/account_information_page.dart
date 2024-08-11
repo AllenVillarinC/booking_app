@@ -47,6 +47,9 @@ class _AccountInformationPageState extends State<AccountInformationPage> {
                   const CustomDivider(),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
+                      side: BorderSide(
+                          color: Theme.of(context).colorScheme.primary,
+                          width: 0.1),
                       backgroundColor: Theme.of(context).colorScheme.surface,
                       elevation: 3,
                     ),

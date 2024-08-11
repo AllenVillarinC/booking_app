@@ -1,14 +1,13 @@
 import 'package:booking_app/configs/imports.dart';
-import 'package:booking_app/pages/booking_details_page.dart';
 
-class BookingRequestPage extends StatefulWidget {
-  const BookingRequestPage({super.key});
+class CancelRequestPage extends StatefulWidget {
+  const CancelRequestPage({super.key});
 
   @override
-  State<BookingRequestPage> createState() => _BookingRequestPageState();
+  State<CancelRequestPage> createState() => _CancelRequestPageState();
 }
 
-class _BookingRequestPageState extends State<BookingRequestPage> {
+class _CancelRequestPageState extends State<CancelRequestPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,13 +26,13 @@ class _BookingRequestPageState extends State<BookingRequestPage> {
                   fit: BoxFit.contain,
                 ),
               ),
-              const BlackText(blackText: "Booking request sent!")
+              const BlackText(blackText: "Cancellation request sent!")
                   .animate()
                   .fade(delay: const Duration(milliseconds: 2000)),
               const CustomDivider(),
               const CustomDivider(),
               const Text(
-                "Thank you for using BuzzUp to book your appointment at The Gentleman's Cut. \n\nPlease wait for your apppointment confirmation.",
+                "Please wait for your apppointment cancellation.",
                 style: TextStyle(fontSize: 13),
                 textAlign: TextAlign.center,
               ).animate().fadeIn(delay: const Duration(milliseconds: 2800)),
@@ -41,33 +40,18 @@ class _BookingRequestPageState extends State<BookingRequestPage> {
               const CustomDivider(),
               Align(
                 alignment: Alignment.center,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Theme.of(context).colorScheme.surface,
-                  ),
+                child: TextButton(
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => const BookingDetailsPage()),
+                      MaterialPageRoute(builder: (context) => const MainPage()),
                     );
-                  },
-                  child: const Text("Check appointment details"),
-                ),
-              ).animate().fadeIn(delay: const Duration(milliseconds: 3000)),
-              const CustomDivider(),
-              const CustomDivider(),
-              Align(
-                alignment: Alignment.center,
-                child: TextButton(
-                  onPressed: () {
-                    Navigator.pop(context);
                   },
                   child: const Text(
                     "Return to Home",
                   ),
                 ),
-              ).animate().fadeIn(delay: const Duration(milliseconds: 3200)),
+              ).animate().fadeIn(delay: const Duration(milliseconds: 3000)),
             ],
           ),
         ),

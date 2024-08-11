@@ -1,38 +1,15 @@
 import 'package:booking_app/configs/imports.dart';
+import 'package:booking_app/pages/cancel_request.dart';
 
-class BookingPage extends StatefulWidget {
-  const BookingPage({super.key});
+class BookingDetailsPage extends StatefulWidget {
+  const BookingDetailsPage({super.key});
 
   @override
-  State<BookingPage> createState() => _BookingPageState();
+  State<BookingDetailsPage> createState() => _BookingDetailsPageState();
 }
 
-class _BookingPageState extends State<BookingPage> {
+class _BookingDetailsPageState extends State<BookingDetailsPage> {
   double fontSize = 11.5;
-
-  String selectedDate = 'August 1, 2024';
-  String selectedTime = '9:00 AM';
-
-  List<String> dates = [
-    'August 1, 2024',
-    'August 2, 2024',
-    'August 3, 2024',
-    'August 4, 2024',
-    'August 5, 2024'
-  ];
-
-  List<String> times = [
-    '9:00 AM',
-    '10:00 AM',
-    '11:00 AM',
-    '12:00 PM',
-    '1:00 PM',
-    '2:00 PM',
-    '3:00 PM',
-    '4:00 PM',
-    '5:00 PM'
-  ];
-
   final _overlayController = OverlayPortalController();
 
   @override
@@ -166,6 +143,45 @@ class _BookingPageState extends State<BookingPage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Ionicons.checkmark_circle,
+                          color: Colors.green,
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          "Confirmed",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    ),
+                    const CustomDivider(),
+                    const CustomDivider(),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Container(
+                          height: 10,
+                          width: MediaQuery.of(context).size.width * 0.4,
+                          decoration: BoxDecoration(
+                              color: Colors.green,
+                              borderRadius: BorderRadius.circular(5)),
+                        ),
+                        Container(
+                          height: 10,
+                          width: MediaQuery.of(context).size.width * 0.4,
+                          decoration: BoxDecoration(
+                              color: Colors.green,
+                              borderRadius: BorderRadius.circular(5)),
+                        ),
+                      ],
+                    ),
+                    const CustomDivider(),
+                    const CustomDivider(),
                     const Text(
                       "Service Information",
                       style:
@@ -212,60 +228,28 @@ class _BookingPageState extends State<BookingPage> {
                     ),
                     const CustomDivider(),
                     const CustomDivider(),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        DropdownButton<String>(
-                          value: selectedDate,
-                          items: dates.map((String date) {
-                            return DropdownMenuItem<String>(
-                              value: date,
-                              child: Text(date),
-                            );
-                          }).toList(),
-                          onChanged: (String? newValue) {
-                            setState(() {
-                              selectedDate = newValue!;
-                            });
-                          },
-                        ),
-                        DropdownButton<String>(
-                          value: selectedTime,
-                          items: times.map((String time) {
-                            return DropdownMenuItem<String>(
-                              value: time,
-                              child: Text(time),
-                            );
-                          }).toList(),
-                          onChanged: (String? newValue) {
-                            setState(() {
-                              selectedTime = newValue!;
-                            });
-                          },
-                        ),
-                      ],
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [Text("August 1, 2024"), Text("9:00 AM")],
                     ),
                     const CustomDivider(),
                     const CustomDivider(),
                     Align(
-                        alignment: Alignment.center,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor:
-                                Theme.of(context).colorScheme.surface,
-                            side: BorderSide(
-                                color: Theme.of(context).colorScheme.primary,
-                                width: 0.1),
+                      alignment: Alignment.center,
+                      child: TextButton(
+                        onPressed: _overlayController.toggle,
+                        child: OverlayPortal(
+                          controller: _overlayController,
+                          overlayChildBuilder: (BuildContext context) {
+                            return const CancelRequestPage();
+                          },
+                          child: const Text(
+                            "Cancel Appointment",
+                            style: TextStyle(color: Colors.red),
                           ),
-                          onPressed: _overlayController.toggle,
-                          child: OverlayPortal(
-                            controller: _overlayController,
-                            overlayChildBuilder: (BuildContext context) {
-                              return const BookingRequestPage();
-                            },
-                            child: const Text("Book Appointment"),
-                          ),
-                        )),
+                        ),
+                      ),
+                    ),
                     const CustomDivider(),
                   ],
                 ),
